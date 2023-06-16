@@ -4,8 +4,8 @@
 [Course Syllabus](http://www.kfupm.edu.sa/departments/math/Syllabus/Math%20101-223.pdf)
 
 # Notes 
-[PDF FORMAT](./pdfs/math101.pdf)
-[HTML FORMAT](./htmls/math101.html)
+- [PDF FORMAT](./pdfs/math101.pdf)
+- [HTML FORMAT](./htmls/math101.html)
 
 # In class live questions
 - [Section 2.1 (Part 1)](https://itempool.com/mshahrani/c/Bx5yDaXLk1W)
