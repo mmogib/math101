@@ -588,26 +588,14 @@ we write
 # ╔═╡ cc70d313-74e3-4316-b83b-f1aef828fead
 md"## Horizontal Asymptotes"
 
-# ╔═╡ fcb34469-c7bc-4e1e-9cda-8ba0bc6cd23a
-cm"""
-__Examples__
-<div class="img-container">
+# ╔═╡ 8c0e4e4b-eea3-4493-94c5-c932ad35c033
 
-$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
-
-</div>
-"""
 
 # ╔═╡ eb67c3a6-38fe-4cd5-98fd-37028d40c136
 # begin 
 # 	xx=symbols("xx",real=true)
 # 	limit(xx*sin(1/xx),xx,0)
 # end
-
-# ╔═╡ ae67e747-c131-40f8-ac4a-736934d6b5b4
-md"""
-## Infinite Limits at Infinity
-"""
 
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
@@ -1059,65 +1047,6 @@ $(beginBlock("Remark",""))
 2. is __not true__ if ``\displaystyle \lim_{x\to c}g(x)=0``
 $(endBlock())
 $(endTheorem())
-"""
-
-# ╔═╡ 8c0e4e4b-eea3-4493-94c5-c932ad35c033
-cm"""
-$(beginBlock("Definition of a Horizontal Asymptote",""))
-
-The line ``y=L`` is a __horizontal asymptote__ of the graph of ``f`` when
-```math
-\lim_{x\to -\infty} f(x) = L \quad \text{or}\quad \lim_{x\to \infty} f(x) = L
-```
-$(endBlock())
-"""
-
-# ╔═╡ 18142094-6fe8-401b-9901-4d27568400cc
-cm"""
-$(beginBlock("Remarks",""))
-- Limits at infinity have many of the same properties of limits discussed in Section 2.3. 
-- For example, if ``\displaystyle \lim_{x\to\infty}f(x)`` and ``\displaystyle \lim_{x\to\infty}g(x)`` both exist, then
-	- ``\displaystyle \lim_{x\to\infty}\left[f(x)+g(x)\right]=\displaystyle \lim_{x\to\infty}f(x)+\displaystyle \lim_{x\to\infty}g(x)`` 
-	- ``\displaystyle \lim_{x\to\infty}\left[f(x)g(x)\right]=\displaystyle \left[\lim_{x\to\infty}f(x)\right]\left[\displaystyle \lim_{x\to\infty}g(x)\right]`` 
-
-- Similar properties hold for limits at ``-\infty``.
-$(endBlock())
-"""
-
-# ╔═╡ 1578ef95-a110-4bd7-8166-f83400ccf956
-cm"""
-$(beginTheorem("Limits at Infinity"))
-1. If ``r`` is a positive rational number and ``c`` is any real number, then
-```math
-\lim_{x\to\infty}\frac{c}{x^r}=0\quad \text{and}\quad \lim_{x\to-\infty}\frac{c}{x^r}=0
-```
-The second limit is valid only if ``x^r`` is defined when ``x<0``.
-
-2. ``\displaystyle \lim_{x\to-\infty}e^x=0`` and ``\displaystyle \lim_{x\to\infty}e^{-x}=0``
-
-"""
-
-# ╔═╡ 51230edd-280c-4498-bac6-18a49c9c2e3d
-cm"""
-$(beginBlock("Guidelines for Finding Limits at ±∞ of Rational Functions",""))
-```math
-h(x)=\frac{p(x)}{q(x)}
-```
-1. ``\text{deg }p<\text{deg }q``, then the limit is ``0``.
-
-2. ``\text{deg }p=\text{deg }q``, then the __limit__ of the rational function __is__ the __ratio__ of the __leading coefficients__.
-
-3. ``\text{deg }p>\text{deg }q``, then the __limit__ of the rational function __does not exist__.
-
-$(endBlock())
-"""
-
-# ╔═╡ 771e9f11-c410-4f09-b75f-18c07d815396
-cm"""
-$(beginBlock("Remark",""))
-Determining whether a function has an infinite limit at infinity is useful in analyzing the __“end behavior”__ of its graph. You will see examples of this in Section 4.6 on curve sketching.
-
-$(endBlock())
 """
 
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
@@ -2662,6 +2591,7 @@ version = "1.4.1+0"
 # ╟─6f7f81b4-09da-424b-be08-3bf3d3599853
 # ╟─c6fa66ae-159a-4ce8-ae0a-857dd200c5d5
 # ╠═c8994719-b991-4ebe-8980-9fc84699bfe2
+# ╠═b76f4e8f-6ff0-4a0f-9d5b-a961dfea00d8
 # ╟─97de049c-b98b-4513-b0b7-9079cc1d2080
 # ╟─8807bd29-52ef-4dfa-9be7-6ddad30c0874
 # ╟─6b705fc1-7369-430d-90ae-21ffb55ef130
@@ -2709,14 +2639,8 @@ version = "1.4.1+0"
 # ╟─5f6b39cb-9708-47fe-a038-150f166e17ce
 # ╟─0605339e-2b17-4088-aa2f-a75863354a6d
 # ╟─cc70d313-74e3-4316-b83b-f1aef828fead
-# ╟─8c0e4e4b-eea3-4493-94c5-c932ad35c033
-# ╟─18142094-6fe8-401b-9901-4d27568400cc
-# ╟─1578ef95-a110-4bd7-8166-f83400ccf956
-# ╟─51230edd-280c-4498-bac6-18a49c9c2e3d
-# ╟─fcb34469-c7bc-4e1e-9cda-8ba0bc6cd23a
+# ╠═8c0e4e4b-eea3-4493-94c5-c932ad35c033
 # ╠═eb67c3a6-38fe-4cd5-98fd-37028d40c136
-# ╟─ae67e747-c131-40f8-ac4a-736934d6b5b4
-# ╟─771e9f11-c410-4f09-b75f-18c07d815396
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e
