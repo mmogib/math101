@@ -609,6 +609,199 @@ md"""
 ## Infinite Limits at Infinity
 """
 
+# ╔═╡ f9476d3e-3837-42c9-9e11-95097a6b2373
+md"""# 2.4: Continuity and One-Sided Limits
+__Objectives__
+> - Determine continuity at a point and continuity on an open interval.
+> - Determine one-sided limits and continuity on a closed interval.
+> - Use properties of continuity.
+> - Understand and use the Intermediate Value Theorem. 
+"""
+
+# ╔═╡ 26a599c7-e877-4f73-a234-c41eff8d8e1c
+md"## Continuity at a Point and on an Open Interval"
+
+# ╔═╡ 32275e49-51e9-4aa1-bb01-3bbfea0edd64
+cm"""
+__The graph of ``f`` is no contnious at ``x=c``__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/0uprtil51n71g25/se4.1_discont_1.png?raw=1"))
+
+</div>
+In Figure __above__, it appears that continuity at ``x=c`` can be __destroyed__ by any one of __three conditions__.
+
+1. The function is not defined at ``x=c``.
+
+2. The limit of ``f(x)`` does not exist at ``x=c``.
+
+3. The limit of ``f(x)`` exists at ``x=c``, but it is not equal to ``f(c)``.
+
+"""
+
+# ╔═╡ fb24f85a-0feb-4f51-beb7-caa0910821a0
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 12b2f6cf-6c12-4d3e-83fe-f6880ac86a80
+md"## One-Sided Limits and Continuity on a Closed Interval"
+
+# ╔═╡ e77cda7c-2a23-4e22-9df9-3ec75f35ba1c
+cm"""
+__(a) Limit from right__ ``\displaystyle \lim_{x\to c^+}f(x)=L``
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/jpog0rwqgjcfems/se4.1_left_limit.png?raw=1"))
+</div>
+
+__(b) Limit from left__ ``\displaystyle \lim_{x\to c^-}f(x)=L``
+
+"""
+
+# ╔═╡ de60d9c6-36ed-4212-9172-76fc23e0732f
+cm"""
+__STEP FUNCTIONS__ 
+
+(__greatest integer function__)
+
+```math
+[\kern-0.2em[x]\kern-0.2em]=\textbf{ greatest integer } n \textbf{ such that }n\leq x. 
+```
+
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/5t0e202aryizwzs/se24_step_function.png?raw=1",:width=>500))
+</div>
+
+"""
+
+# ╔═╡ 9ea783cf-173e-4a8a-8be7-dc8c7d03da89
+md"## Properties of Continuity"
+
+# ╔═╡ 911f9cdf-f753-4034-adc4-7e598610735a
+cm"""
+__Exercises__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ afceaec3-6d71-48d0-b456-47fcbd9f4b85
+md"## The Intermediate Value Theorem"
+
+# ╔═╡ 161c840c-8309-41ee-b41c-4f5f7d622762
+md"""
+# 3.1: The Derivative and the Tangent Line Problem
+__Objectives__
+> - Find the slope of the tangent line to a curve at a point.
+> - Use the limit definition to find the derivative of a function.
+> - Understand the relationship between differentiability and continuity.
+"""
+
+# ╔═╡ 9306823c-46fa-40a6-bdc8-2b60669040a6
+md"## The Tangent Line Problem"
+
+# ╔═╡ 866720a0-cd9b-448d-8832-f9fb098e0bfb
+begin
+	Sec31dxSlider = @bind Sec31Δx1 Slider(0:0.1:4, default=4,show_value=true)
+	cm"""
+	``\Delta x``  $Sec31dxSlider
+	"""
+end
+
+# ╔═╡ ef9db5e3-a380-4962-bc2c-765f1bbb3ff3
+begin
+	Sec31f1(x)=0.2x^2+1
+	Sec31df2(x)=0.4x
+	Sec31slope1(d) =(Sec31f1(1+d)-Sec31f1(1))/d
+	Sec31p2= plot(x->Sec31f1(x),
+		aspect_ratio=1,
+		xlimits=(-4,6),
+		ylimits=(-0.5,8),
+		c=:blue,
+		linewidth=2,
+		xticks=([1,2,3,4,5],["","","","",""]),
+		yticks=([1,2,3,4,5,6,7,8],["","","","",""]),
+		annotations=[
+				(6,0.2,L"x"),
+				(0.2,8,L"y"),
+				(1,0.2,L"c"),
+				(1+Sec31Δx1,-0.2,text(L"c+\Delta x",10)),
+				(1+Sec31Δx1,0,text(L"\bullet",10)),
+				(4.5,3.5,L"y=f(x)"),
+				(1,Sec31f1(1)-0.01,L"\bullet"),
+				(0.8,Sec31f1(1)+0.35,text(L"P(c,f(c))",8)),
+				(1+Sec31Δx1,Sec31f1(1+Sec31Δx1)-0.35,text(L"Q(c+\Delta x,f(c+\Delta x))",8)),
+				(1+Sec31Δx1,Sec31f1(1+Sec31Δx1)-0.01,L"\bullet"),
+		],
+		frame_style=:origin, 
+		label=:none)
+	plot!(Sec31p2,x->(Sec31slope1(Sec31Δx1))*(x-1)+Sec31f1(1),c=:green,label=nothing)
+	plot!(Sec31p2,x->Sec31df2(1)*(x-1)+f2(1),c=:black,label=nothing)
+	txt = if Sec31Δx1==0 
+		cm"""
+__Slope of tangent line__ 
+```math
+\text{m}=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}= \lim_{\Delta x\to 0}\frac{f(c+\Delta x)-f(c)}{\Delta x}
+```
+"""
+	else
+		cm"""
+<span style="color:green;"> __Slope of secant line__ </span>
+```math
+\color{green}{
+\text{m}_{sec}=\frac{f(c+\Delta x)-f(c)}{\Delta x}
+}
+```
+		"""
+	end
+	cm"""
+	__Find the equation of the secant line__
+	$Sec31p2
+	
+
+	$txt
+	"""
+end
+
+# ╔═╡ 6c1ebc93-5c8f-46d0-983e-661a15aa7d17
+md"## The Derivative of a Function"
+
+# ╔═╡ 858f00d8-0d8d-473a-933a-2fe8eda40239
+md"## Differentiability and Continuity"
+
+# ╔═╡ 1bbe720c-deeb-4efd-aed2-65d1660536d3
+cm"""
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/2xl7s6z048mg3lo/sec3.1_alternative_derivative.jpg?raw=1"))
+</div>
+
+__Alternative form of derivative__
+```math
+f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}
+```
+
+"""
+
+# ╔═╡ 71e80540-7050-43b8-b126-ea4c232dfa17
+cm"""
+__Exercises__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
 	n,i = symbols("n,i", integer=true)
@@ -1116,6 +1309,316 @@ $(endBlock())
 cm"""
 $(beginBlock("Remark",""))
 Determining whether a function has an infinite limit at infinity is useful in analyzing the __“end behavior”__ of its graph. You will see examples of this in Section 4.6 on curve sketching.
+
+$(endBlock())
+"""
+
+# ╔═╡ e239e3b1-41d2-4eed-b808-714d765da70d
+cm"""
+$(beginBlock("Definition of Continuity",""))
+__Continuity at a Point__
+
+A function ``f`` is __continuous at ``c``__ when these three conditions are met.
+
+1. ``f(c)`` is defined.
+
+2. ``\displaystyle \lim_{x\to c}f(x)`` exists.
+ 
+3. ``\displaystyle \lim_{x\to c}f(x)=f(c)``
+
+
+__Continuity on an Open Interval__
+
+- A function ``f`` is __continuous on an open interval ``(a,b)``__  when the function is continuous at each point in the interval. 
+- A function that is continuous on the entire real number line ``(-\infty,\infty)`` is __everywhere continuous__.
+$(endBlock())
+"""
+
+# ╔═╡ aae72f6c-6acd-452d-9a4b-114dfff0e251
+cm"""
+$(beginBlock("Remarks",""))
+-  If a function ``f`` is defined on an open interval ``I`` (except possibly at ``c``), and ``f`` is not continuous at ``c``, then ``f`` is said to have a __discontinuity__ at ``c``.
+- Discontinuities fall into two categories: 
+	- __removable__:  A discontinuity at ``c`` is called removable when ``f`` can be made continuous by appropriately defining (or redefining) ``f(c)``.
+	- __nonremovable__: there is no way to define ``f(c)`` so as to make the function continuous at ``x=c``.
+$(endBlock())
+"""
+
+# ╔═╡ c39a783e-7902-4df5-90a5-9e792f07d50c
+cm"""
+$(example("Example 1",""))
+Discuss the continuity of each function
+```math
+\begin{array}{ll}
+\text{a. } &\displaystyle f(x)=\frac{1}{x} \\
+\text{b. } &\displaystyle g(x)=\frac{x^2-1}{x-1} \\
+\text{c. } &\displaystyle h(x)=\begin{cases}x+1, & x\leq 0\\ e^x,& x>0\end{cases} \\
+\text{d. } &\displaystyle y=\sin x  
+\end{array}
+```
+
+"""
+
+# ╔═╡ ebfc7342-2088-4b5c-8655-7b9eb549daf7
+cm"""
+$(beginTheorem("The Existence of a Limit"))
+
+Let ``f`` be a function, and let ``c`` and ``L`` be real numbers. The limit of ``f(x)`` as ``x`` approaches ``c`` is  if and only if
+
+```math
+\lim_{x\to c^-}f(x)=L \qquad \text{and}\qquad \lim_{x\to c^+}f(x)=L
+```
+
+$(endTheorem())
+
+$(beginBlock("Definition of Continuity on a Closed Interval",""))
+
+A function ``f`` is __continuous on the closed interval ``[a,b]``__ when ``f`` is continuous on the open interval ``(a,b)`` and
+```math
+\lim_{x\to a^+}f(x)=f(a)
+```
+and
+```math
+\lim_{x\to b^-}f(x)=f(b).
+```
+
+
+$(endBlock())
+"""
+
+# ╔═╡ 63520084-6d28-4df5-bb54-1da5d4cdf8e7
+cm"""
+$(example("Example 4","Continuity on a Closed Interval"))
+Discuss the continuity of
+```math
+f(x)=\sqrt{1-x^2}
+```
+"""
+
+# ╔═╡ 0885b9a6-d3eb-465c-aa8e-d1424c60bb11
+cm"""
+$(beginTheorem("Properties of Continuity"))
+
+If ``b`` is a real number and ``f`` and ``g`` are continuous at ``x=c``, then the functions listed below are also continuous at ``c``.
+
+1. __Scalar multiple:__ ``\quad bf`` 
+
+2. __Sum or difference:__ ``\quad f\pm g`` 
+
+3. __Product:__ ``\quad fg`` 
+
+4. __Quotient:__ ``\displaystyle\quad \frac{f}{g}, \quad g(c)\ne 0`` , 
+"""
+
+# ╔═╡ fe8952fd-8033-4f65-a2c2-1e6a4134d633
+cm"""
+$(beginBlock("Remarks",""))
+1. __Polynomials__ are continuous at every point in their domains.
+
+2. __Rational functions__ are continuous at every point in their domains.
+
+3. __Radical functions__ are continuous at every point in their domains.
+
+4. __Trigonometric functions__ are continuous at every point in their domains. 
+
+5. __Exponential and logarithmic functions__ are continuous at every point in their domains.
+$(endBlock())
+"""
+
+# ╔═╡ bfb1598b-921f-4761-9527-7d7f88075bd5
+cm"""
+$(beginTheorem("Continuity of a Composite Function"))
+
+If ``g`` is continuous at ``c`` and ``f`` is continuous at ``g(c)`` then the __composite function__ given by ``(f\circ g)(x)=f(g(x))`` is continuous at ``c``.
+
+$(endTheorem())
+
+$(beginBlock("Remark",""))
+```math
+\lim_{x\to c}{f(g(x))} = f(g(c))
+```
+provided ``f`` and ``g`` satisfy the conditions of the theorem.
+$(endBlock())
+"""
+
+# ╔═╡ df1bf60f-2e41-4eda-9d07-f2aefc0c7cb7
+cm"""
+$(example("Example 7","Testing for Continuity"))
+
+Describe the interval(s) on which each function is continuous.
+```math
+\begin{array}{ll}
+\text{a. } &\displaystyle f(x)=\tan x \\
+\text{b. } &\displaystyle g(x)=\begin{cases}\sin \frac{1}{x}, & x\ne 0\\ 0,& x=0\end{cases} \\
+\text{c. } &\displaystyle h(x)=\begin{cases}x\sin \frac{1}{x}, & x\ne 0\\ 0,& x=0\end{cases} \\
+\end{array}
+```
+"""
+
+# ╔═╡ 769e5d3a-b537-4e70-83a7-d02f9767e87e
+cm"""
+$(beginTheorem("Intermediate Value Theorem"))
+If ``f`` is continuous on the closed interval ``[a,b]``, ``f(a)\ne f(b)``, and ``k`` is any number between ``f(a)`` and ``f(b)`` then there is at least one number ``c`` in ``[a,b]`` such that
+```math
+f(c)=k.
+```
+$(endBlock())
+"""
+
+# ╔═╡ 8ad3b7ab-2999-4b7f-ac83-24207f0ce1c9
+cm"""
+$(example("Example 8","An Application of the Intermediate Value Theorem"))
+
+Use the Intermediate Value Theorem to show that the polynomial function
+```math
+f(x) = x^3+2x-1
+```
+has a zero in the interval ``[0,1]``.
+"""
+
+# ╔═╡ 1b09c022-ef6e-4159-a947-e0500e9c2137
+cm"""
+$(beginBlock("Definition of Tangent Line with Slope",""))
+If ``f`` is defined on an open interval containing ``c``, and if the limit
+```math
+\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\to 0}\frac{f(c+\Delta x)-f(c)}{\Delta x}=m
+```
+exists, then the line passing through ``(c,f(c))`` with slope ``m`` is the __tangent line__ to the graph of ``f`` at the point ``(c,f(c))``.
+$(endBlock())
+
+$(beginBlock("Remark",""))
+The slope of the tangent line to the graph of ``f`` at the point ``(c,f(c))`` is also called the __slope of the graph of ``f`` at ``x=c``__.
+$(endBlock())
+"""
+
+# ╔═╡ b87bd0f8-9c4d-43e6-bd70-ab1f7aae3099
+cm"""
+$(example("Example 1","The Slope of the Graph of a Linear Function"))
+Find the slope of the graph of ``f(x)=2x-3`` when ``c=2``.
+
+
+$(example("Example 2","Tangent Lines to the Graph of a Nonlinear Function"))
+Find the slopes of the tangent lines to the graph of ``f(x)=x^2+1`` at the points ``(0,1)`` and ``(-1,2)``.
+
+"""
+
+
+# ╔═╡ a723c237-59a8-458a-8e36-38ac47f510aa
+cm"""
+$(beginBlock("Remarks",""))
+- The definition of a tangent line to a curve does not cover the possibility of a vertical tangent line. 
+- For vertical tangent lines, you can use the __following definition__. If ``f`` is continuous at ``c`` and
+```math
+\lim_{\Delta x\to 0}\frac{f(c+\Delta x)-f(c)}{\Delta x}=\infty
+\quad \text{or}\quad 
+\lim_{\Delta x\to 0}\frac{f(c+\Delta x)-f(c)}{\Delta x}=-\infty
+```
+then the __vertical line  ``x=c``__ passing through ``(c,f(c))`` is a vertical tangent line to the graph of ``f``. 
+
+$(endBlock())
+"""
+
+# ╔═╡ d21f6cf2-e355-40b4-91e5-0de2f2164f69
+cm"""
+$(beginBlock("Definition", "Derivative of a Function"))
+The __derivative__ of ``f`` at ``x`` is
+```math
+f'(x)=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}
+```
+provided the limit exists. For all ``x`` for which this limit exists, ``f'`` is a function of ``x``.
+$(endBlock())
+
+$(beginBlock("Remarks", ""))
+- The notation ``f'(x)`` is read as “``f`` prime of ``x``.”
+
+- ``f'(x)`` is a __function__ that gives the slope of the tangent line to the graph of ``f`` at the point ``(x,f(x)``, provided that the graph has a tangent line at this point.
+
+- The derivative can also be used to determine the __instantaneous rate of change__ (or simply the __rate of change__) of one variable with respect to another.
+
+- The process of finding the derivative of a function is called __differentiation__.
+
+- A function is __differentiable__ at ``x`` when its derivative exists at ``x`` and is __differentiable on an open interval ``(a,b)``__  when it is differentiable at every point in the interval.
+
+$(endBlock()) 
+"""
+
+# ╔═╡ e6c41f43-ac50-40f9-9491-ff1596f7ef5e
+cm"""
+$(beginBlock("Notation",""))
+```math
+y=f(x)
+```
+- ``\displaystyle f'(x)``
+- ``\displaystyle \frac{dy}{dx}``
+- ``\displaystyle y'``
+- ``\displaystyle \frac{d}{dx}\left[f(x)\right]``
+- ``\displaystyle D_x[y]``
+```math
+\frac{dy}{dx} =\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}=
+\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}
+```
+$(endBlock())
+"""
+
+# ╔═╡ 0f3fa154-58ad-4983-a1d4-860e49931439
+cm"""
+$(example("Examples 3,4,5","Finding the Derivative by the Limit Process"))
+__Find the derivative of__
+
+- ``\displaystyle f(x)=x^3+2x``
+- ``\displaystyle f(x)=\sqrt{x}``
+- ``\displaystyle y=\frac{2}{t}`` with respect to ``t``.
+"""
+
+# ╔═╡ 0096631e-e2c4-49ea-a9d9-e3bdd70f0423
+cm"""
+$(beginBlock("Remarks",""))
+__derivative from the left__
+```math
+\lim_{x\to c^-}\frac{f(x)-f(c)}{x-c}
+```
+
+__derivative from the right__
+```math
+\lim_{x\to c^+}\frac{f(x)-f(c)}{x-c}
+```
+$(endBlock())
+
+$(example("Example",""))
+```math
+f(x)=[[x]]
+```
+"""
+
+# ╔═╡ d021c3ce-0118-4b87-a516-af471288a3ab
+cm"""
+$(example("Example 6","A Graph with a Sharp Turn"))
+```math
+f(x) =|x-2|
+```
+
+$(example("Example 7","A Graph with a Vertical Tangent Line"))
+```math
+f(x) =x^{\frac{1}{3}}
+```
+"""
+
+# ╔═╡ 1944e59d-b4bf-4c16-8408-4c7e8dd9017b
+cm"""
+$(beginTheorem("Differentiability Implies Continuity"))
+If ``f`` is differentiable at ``x=c``, then ``f`` is continuous at ``x=c``.
+
+$(endTheorem())
+"""
+
+# ╔═╡ e9b58100-f297-4943-9eef-7f7cc39b2e6e
+cm"""
+$(beginBlock("remarks",""))
+The relationship between continuity and differentiability is summarized below.
+
+- If a function ``f`` is differentiable at ``x=c``, then it is continuous at ``x=c``. So, __differentiability__ implies (``\Rightarrow``) __continuity__.
+
+- It is possible for a function to be continuous at ``x=c`` and not be differentiable at ``x=c``. So, __continuity does not imply differentiability__.
 
 $(endBlock())
 """
@@ -2717,6 +3220,45 @@ version = "1.4.1+0"
 # ╠═eb67c3a6-38fe-4cd5-98fd-37028d40c136
 # ╟─ae67e747-c131-40f8-ac4a-736934d6b5b4
 # ╟─771e9f11-c410-4f09-b75f-18c07d815396
+# ╟─f9476d3e-3837-42c9-9e11-95097a6b2373
+# ╟─26a599c7-e877-4f73-a234-c41eff8d8e1c
+# ╟─32275e49-51e9-4aa1-bb01-3bbfea0edd64
+# ╟─e239e3b1-41d2-4eed-b808-714d765da70d
+# ╟─aae72f6c-6acd-452d-9a4b-114dfff0e251
+# ╟─c39a783e-7902-4df5-90a5-9e792f07d50c
+# ╟─fb24f85a-0feb-4f51-beb7-caa0910821a0
+# ╟─12b2f6cf-6c12-4d3e-83fe-f6880ac86a80
+# ╟─e77cda7c-2a23-4e22-9df9-3ec75f35ba1c
+# ╟─de60d9c6-36ed-4212-9172-76fc23e0732f
+# ╟─ebfc7342-2088-4b5c-8655-7b9eb549daf7
+# ╟─63520084-6d28-4df5-bb54-1da5d4cdf8e7
+# ╟─9ea783cf-173e-4a8a-8be7-dc8c7d03da89
+# ╟─0885b9a6-d3eb-465c-aa8e-d1424c60bb11
+# ╟─fe8952fd-8033-4f65-a2c2-1e6a4134d633
+# ╟─bfb1598b-921f-4761-9527-7d7f88075bd5
+# ╟─df1bf60f-2e41-4eda-9d07-f2aefc0c7cb7
+# ╟─911f9cdf-f753-4034-adc4-7e598610735a
+# ╟─afceaec3-6d71-48d0-b456-47fcbd9f4b85
+# ╟─769e5d3a-b537-4e70-83a7-d02f9767e87e
+# ╟─8ad3b7ab-2999-4b7f-ac83-24207f0ce1c9
+# ╟─161c840c-8309-41ee-b41c-4f5f7d622762
+# ╟─9306823c-46fa-40a6-bdc8-2b60669040a6
+# ╟─866720a0-cd9b-448d-8832-f9fb098e0bfb
+# ╟─ef9db5e3-a380-4962-bc2c-765f1bbb3ff3
+# ╟─1b09c022-ef6e-4159-a947-e0500e9c2137
+# ╟─b87bd0f8-9c4d-43e6-bd70-ab1f7aae3099
+# ╟─a723c237-59a8-458a-8e36-38ac47f510aa
+# ╟─6c1ebc93-5c8f-46d0-983e-661a15aa7d17
+# ╟─d21f6cf2-e355-40b4-91e5-0de2f2164f69
+# ╟─e6c41f43-ac50-40f9-9491-ff1596f7ef5e
+# ╟─0f3fa154-58ad-4983-a1d4-860e49931439
+# ╟─858f00d8-0d8d-473a-933a-2fe8eda40239
+# ╟─1bbe720c-deeb-4efd-aed2-65d1660536d3
+# ╟─0096631e-e2c4-49ea-a9d9-e3bdd70f0423
+# ╟─d021c3ce-0118-4b87-a516-af471288a3ab
+# ╟─1944e59d-b4bf-4c16-8408-4c7e8dd9017b
+# ╟─e9b58100-f297-4943-9eef-7f7cc39b2e6e
+# ╟─71e80540-7050-43b8-b126-ea4c232dfa17
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e
