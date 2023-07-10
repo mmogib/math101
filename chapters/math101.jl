@@ -802,6 +802,143 @@ $(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.
 </div>
 """
 
+# ╔═╡ 527c64a0-0353-440b-8ed8-9c7556168f76
+md""" 
+# 3.2: Basic Differentiation Rules and Rates of Change
+__Objectives__
+> - Find the derivative of a function using the Constant Rule.
+> - Find the derivative of a function using the Power Rule.
+> - Find the derivative of a function using the Constant Multiple Rule.
+> - Find the derivative of a function using the Sum and Difference Rules.
+> - Find the derivatives of the sine function and of the cosine function.
+> - Find the derivatives of exponential functions.
+> - Use derivatives to find rates of change.
+"""
+
+# ╔═╡ 0e8ebfac-87a8-49d4-93f5-fa41b4099f6a
+md"## The Constant Rule"
+
+# ╔═╡ e99258e8-bca7-4926-b93e-81c69fac45e9
+md"## The Power Rule"
+
+# ╔═╡ 6360916b-b0aa-471c-8b48-932983f35f76
+md"## The Constant Multiple Rule"
+
+# ╔═╡ db709ce9-82d4-4296-bb5c-63e417215ef0
+md"## The Sum and Difference Rules"
+
+# ╔═╡ 6d189698-df83-4955-bebf-fc997febef22
+md"## Derivatives of the Sine and Cosine Functions"
+
+# ╔═╡ c3e874ae-a802-48d9-b146-fd069574d4ce
+md"## Derivatives of Exponential Functions"
+
+# ╔═╡ b3c3ee35-b0d6-4be3-b427-5a2d1b03a4ca
+cm"""
+__Exercises__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ a8a7e949-3b21-4c71-910b-1e360c4b3ea4
+md"## Rates of Change"
+
+# ╔═╡ 837eace3-6d49-4158-8765-f4c96eb1e9c2
+cm"""
+- The derivative can be used to determine the __rate of change__ of one variable with respect to another.
+- Applications involving rates of change, sometimes referred to as __instantaneous rates of change__, occur in a wide variety of fields.
+- A common use for rate of change is to describe __the motion of an object moving in 
+a straight line.__ (+ direction and -direction)
+- The function ``s`` that gives __the position (relative to the origin)__ of an object as a __function of time__ ``t`` is called a __position function__. If, over a period of time ∆t, the object changes its position by the amountthen, by the familiar formula
+```math
+\Delta s = s(t+\Delta t)-s(t)
+```
+- then, by the familiar formula
+```math
+\text{Rate} = \frac{\text{distance}}{\text{time}}.
+```
+-the average velocity is
+```math
+\frac{\text{Change in distance}}{\text{Change in time}}=\frac{\Delta s}{\Delta t}
+\qquad \text{\color{red} Average Velocity}.
+```
+- In general, if ``s = s(t)`` is the position function for an object moving along a straight line, then the velocity of the object at time ``t`` is
+```math
+v(t) = \lim_{\Delta t\to 0}\frac{s(t+\Delta t)-s(t)}{\Delta t}=s'(t).
+\qquad \text{\color{red} Velocity function}.
+```
+
+
+"""
+
+
+# ╔═╡ 3bb4a5f1-b5bb-4cd6-b778-1993d15a3cb6
+md"""
+# 3.3: Product and Quotient Rules and Higher-Order Derivatives
+__Objectives__
+> - Find the derivative of a function using the Product Rule.
+> - Find the derivative of a function using the Quotient Rule.
+> - Find the derivative of a trigonometric function.
+> - Find a higher-order derivative of a function.
+"""
+
+# ╔═╡ 8355593c-74e1-4441-b007-cc6b2303c23a
+md"## The Product Rule"
+
+# ╔═╡ 1068f775-fde6-41d7-9aa6-5c57e0eaaa77
+md"## The Quotient Rule"
+
+# ╔═╡ 108dc8da-4b6a-49d1-8dd4-5ecd22c542a3
+md"## Derivatives of Trigonometric Functions"
+
+# ╔═╡ 6ab25ebb-99bf-490d-bd92-4b8e0036426d
+md"## Higher-Order Derivatives"
+
+# ╔═╡ 30319bd0-e478-4f9d-9c48-275b9ba9e44a
+cm"""
+__Remarks__
+
+__Rates of changes__
+```math
+\begin{array}{lllllll}
+ & & & & s(t)&\qquad & \text{\color{red} Position function}\\
+&  &v(t) &=& s'(t)&\qquad & \text{\color{red} Velocity function}\\
+a(t)& = &v'(t)& = & s''(t)&\qquad & \text{\color{red} Acceleration function}
+\end{array}
+```
+
+__Higher Derivatives__
+```math
+\begin{array}{lllll}
+\textbf{First derivative:}& y', & f'(x), & \frac{dy}{dx}, & \frac{d}{dx}\left[f(x)\right], & D_x[y]\\ \\
+
+\textbf{Second derivative:}& y'', & f''(x), & \frac{d^2y}{dx^2}, & \frac{d^2}{dx^2}\left[f(x)\right], & D^2_x[y]\\ \\
+
+\textbf{Third derivative:}& y''', & f'''(x), & \frac{d^3y}{dx^3}, & \frac{d^3}{dx^3}\left[f(x)\right], & D^3_x[y]\\ \\
+
+\textbf{Fourth derivative:}& y^{(4)}, & f^{(4)}(x), & \frac{d^4y}{dx^4}, & \frac{d^4}{dx^4}\left[f(x)\right], & D^4_x[y]\\ \\
+\vdots \\ \\
+
+\textbf{nth derivative:}& y^{(n)}, & f^{(n)}(x), & \frac{d^ny}{dx^n}, & \frac{d^n}{dx^n}\left[f(x)\right], & D^n_x[y]\\ \\
+
+\end{array}
+```
+
+"""
+
+# ╔═╡ 7c14ced9-4863-4315-b2e4-cd905e462b79
+cm"""
+__Exercises__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
 	n,i = symbols("n,i", integer=true)
@@ -1623,6 +1760,166 @@ The relationship between continuity and differentiability is summarized below.
 $(endBlock())
 """
 
+# ╔═╡ fbb40a41-03a0-41b0-9a74-4120c1d2cde6
+cm"""
+$(beginTheorem("The Constant Rule"))
+The derivative of a constant function is ``0``. That is, if ``c`` is a real number, then
+```math
+\frac{d}{dx}[c] = 0.
+```
+$(endTheorem())
+
+"""
+
+# ╔═╡ cbc35c5b-2612-4e68-9ed8-48412b384aef
+cm"""
+$(beginTheorem("The Power Rule"))
+If ``n`` is a rational number, then the function ``f(x)=x^n`` is differentiable and
+```math
+\frac{d}{dx}[x^n] = nx^{n-1}.
+```
+For ``f`` to be differentiable at ``0``, ``n`` must be a number such that ``x^{n-1}`` is defined on an interval containing ``0``.
+$(endTheorem())
+
+"""
+
+# ╔═╡ ae64fc18-142b-4d6f-bb06-1f487b167850
+cm"""
+$(beginTheorem("The Constant Multiple Rule"))
+
+If ``f`` is a differentiable function and ``c`` is a real number, then ``cf`` is also differentiable and
+```math
+\frac{d}{dx}[cf(x)] = cf'(x).
+```
+‍
+$(endTheorem())
+
+"""
+
+# ╔═╡ c061b6bf-8ee0-4552-8d76-e8c0151e816a
+cm"""
+$(beginTheorem("The Sum and Difference Rules"))
+
+The sum (or difference) of two differentiable functions ``f`` and ``g`` is itself differentiable. Moreover, the derivative of ``f+g`` (or ``f-g``) is the sum (or difference) of the derivatives of ``f`` and ``g``.
+```math
+\begin{array}{lclrl}
+\displaystyle\frac{d}{dx}\left[f(x)+g(x)\right] &=& f'(x) +g'(x) &\quad&\text{\color{red}{Sum Rule}}\\
+\\
+\displaystyle\frac{d}{dx}\left[f(x)-g(x)\right] &=& f'(x) -g'(x) &\quad&\text{\color{red}{Difference Rule}}\\
+\end{array}
+```
+‍
+$(endTheorem())
+"""
+
+# ╔═╡ 1a0bc590-09b4-4a3d-84d0-349e18bfd9d0
+cm"""
+$(beginTheorem("Derivatives of the Sine and Cosine Functions"))
+
+```math
+\begin{array}{lclrlcl}
+\displaystyle\frac{d}{dx}\left[\sin(x)\right] &=& \cos x &,\quad&
+\displaystyle\frac{d}{dx}\left[\cos(x)\right] &=& -\sin x
+\\
+\end{array}
+```
+‍
+$(endTheorem())
+"""
+
+# ╔═╡ 318b2cdc-a626-4d56-9616-73aabb1cd20c
+cm"""
+$(beginTheorem("Derivative of the Natural Exponential Function"))
+
+```math
+\begin{array}{lclrlcl}
+\displaystyle\frac{d}{dx}\left[e^{x}\right] &=& e^x
+\\
+\end{array}
+```
+‍
+$(endTheorem())
+"""
+
+# ╔═╡ db2e8eaa-2ab8-4e28-b142-54c3ce14e4d3
+cm"""
+$(example("Example",""))
+If a ball is thrown into the air with a velocity of ``4 m/s``, its height (in meters (m)) ``t`` seconds later is given by 
+```math
+y=4t-4.9t^2.
+```
+1. Find the average velocity for the time period from ``t=1`` to ``t=3``.
+
+2. Find the instantaneous rate of change at ``t=2``.  
+
+"""
+
+# ╔═╡ 8f084112-5b71-492b-a806-96fd29acd141
+cm"""
+$(example("Example 11","Using the Derivative to Find Velocity"))
+
+At time ``t=0``, a diver jumps from a platform diving board that is ``9.8`` meters above the water. The initial velocity of the diver is ``4.9`` meters per second. When does the diver hit the water? What is the diver’s velocity at impact?
+
+"""
+
+# ╔═╡ 3bd2721d-150e-4e44-88f4-d8866e1390b0
+cm"""
+$(beginTheorem("The Product Rule"))
+The product of two differentiable functions ``f`` and ``g`` is itself differentiable. Moreover, the derivative of ``fg`` is the __first__ function __times__ the __derivative of the second__, __plus__ the __second__ function times the __derivative of the first__.
+
+```math
+\frac{d}{dx}\left[f(x)g(x)\right] = f(x)g'(x) + g(x)f'(x).
+```
+
+$(endTheorem())
+"""
+
+# ╔═╡ 017e316d-fb17-4464-a123-aa0071d7b0be
+cm"""
+
+$(example("Example",""))
+
+Find the derivative of ``f(x)=xe^x``.
+"""
+
+# ╔═╡ 99d05ae2-3e06-41d0-b5d4-7b445d497ad1
+cm"""
+$(beginTheorem("The Quotient Rule"))
+The quotient  of two differentiable functions ``f`` and ``g`` is itself differentiable at all values of  for which ``g(x)\neq 0``. Moreover, the derivative of ``f/g`` is given by the __denominator__ __times__ the __derivative of the numerator__ __minus__ the __numerator times the derivative of the denominator__, all __divided by__ the __square of the denominator__.
+
+```math
+\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)f'(x)-f(x)g'(x)}{\left[g(x)\right]^2}, \qquad g(x)\neq 0.
+```
+
+
+$(endTheorem())
+
+$(example("Example",""))
+Find an equation of the tangent line to the graph of ``f(x)=\displaystyle \frac{3-(1/x)}{x+5}`` at ``(-1,1)``.
+
+
+"""
+
+# ╔═╡ df8ecdb9-bbaf-4e16-9f8c-262e50f9bd1c
+cm"""
+$(beginTheorem("Derivatives of Trigonometric Functions"))
+```math
+\begin{array}{rll|rll}
+\frac{d}{dx}\left(\tan x\right) &=&\sec^2x &\frac{d}{dx}\left(\cot x\right) &=&-\csc^2x \\
+\frac{d}{dx}\left(\sec x\right) &=&\sec x\tan x &\frac{d}{dx}\left(\csc x\right) &=&-\csc x\cot x \\
+
+\end{array}
+```
+
+$(endTheorem())
+
+$(example("Example",""))
+Differentiate 
+```math
+y = \frac{1-\cos x}{\sin x}
+```
+"""
+
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 begin
 	function reimannSum(f, n, a, b; method="l", color=:green, plot_it=false)
@@ -1710,7 +2007,7 @@ SymPy = "~1.1.8"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.9.0"
+julia_version = "1.9.2"
 manifest_format = "2.0"
 project_hash = "6613d78ff28019ecb8678f90a330ac43d630daf8"
 
@@ -1854,7 +2151,7 @@ weakdeps = ["Dates", "LinearAlgebra"]
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
-version = "1.0.2+0"
+version = "1.0.5+0"
 
 [[deps.ConcurrentUtilities]]
 deps = ["Serialization", "Sockets"]
@@ -2523,7 +2820,7 @@ version = "0.40.1+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.9.0"
+version = "1.9.2"
 
 [[deps.PkgVersion]]
 deps = ["Pkg"]
@@ -3075,7 +3372,7 @@ version = "0.15.1+0"
 [[deps.libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
-version = "5.7.0+0"
+version = "5.8.0+0"
 
 [[deps.libfdk_aac_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -3259,6 +3556,35 @@ version = "1.4.1+0"
 # ╟─1944e59d-b4bf-4c16-8408-4c7e8dd9017b
 # ╟─e9b58100-f297-4943-9eef-7f7cc39b2e6e
 # ╟─71e80540-7050-43b8-b126-ea4c232dfa17
+# ╟─527c64a0-0353-440b-8ed8-9c7556168f76
+# ╟─0e8ebfac-87a8-49d4-93f5-fa41b4099f6a
+# ╟─fbb40a41-03a0-41b0-9a74-4120c1d2cde6
+# ╟─e99258e8-bca7-4926-b93e-81c69fac45e9
+# ╟─cbc35c5b-2612-4e68-9ed8-48412b384aef
+# ╟─6360916b-b0aa-471c-8b48-932983f35f76
+# ╟─ae64fc18-142b-4d6f-bb06-1f487b167850
+# ╟─db709ce9-82d4-4296-bb5c-63e417215ef0
+# ╟─c061b6bf-8ee0-4552-8d76-e8c0151e816a
+# ╟─6d189698-df83-4955-bebf-fc997febef22
+# ╟─1a0bc590-09b4-4a3d-84d0-349e18bfd9d0
+# ╟─c3e874ae-a802-48d9-b146-fd069574d4ce
+# ╟─318b2cdc-a626-4d56-9616-73aabb1cd20c
+# ╟─b3c3ee35-b0d6-4be3-b427-5a2d1b03a4ca
+# ╟─a8a7e949-3b21-4c71-910b-1e360c4b3ea4
+# ╟─837eace3-6d49-4158-8765-f4c96eb1e9c2
+# ╟─db2e8eaa-2ab8-4e28-b142-54c3ce14e4d3
+# ╟─8f084112-5b71-492b-a806-96fd29acd141
+# ╟─3bb4a5f1-b5bb-4cd6-b778-1993d15a3cb6
+# ╟─8355593c-74e1-4441-b007-cc6b2303c23a
+# ╟─3bd2721d-150e-4e44-88f4-d8866e1390b0
+# ╟─017e316d-fb17-4464-a123-aa0071d7b0be
+# ╟─1068f775-fde6-41d7-9aa6-5c57e0eaaa77
+# ╟─99d05ae2-3e06-41d0-b5d4-7b445d497ad1
+# ╟─108dc8da-4b6a-49d1-8dd4-5ecd22c542a3
+# ╟─df8ecdb9-bbaf-4e16-9f8c-262e50f9bd1c
+# ╟─6ab25ebb-99bf-490d-bd92-4b8e0036426d
+# ╟─30319bd0-e478-4f9d-9c48-275b9ba9e44a
+# ╟─7c14ced9-4863-4315-b2e4-cd905e462b79
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e

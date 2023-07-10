@@ -17,6 +17,5 @@
 - [Section 4.5](https://itempool.com/mshahrani/c/7vvHd_1nhr-) 
 - [Section 2.4 (Part 1)](https://itempool.com/mshahrani/c/dyoYFXi5vND) 
 - [Section 2.4 (Part 2)](https://itempool.com/mshahrani/c/ADJR8ey4k87) 
-
-
+- [Section 3.1](https://itempool.com/mshahrani/c/HQ_1Jt7X_Dp)
 
