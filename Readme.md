@@ -18,4 +18,6 @@
 - [Section 2.4 (Part 1)](https://itempool.com/mshahrani/c/dyoYFXi5vND) 
 - [Section 2.4 (Part 2)](https://itempool.com/mshahrani/c/ADJR8ey4k87) 
 - [Section 3.1](https://itempool.com/mshahrani/c/HQ_1Jt7X_Dp)
+- [Section 3.2](https://itempool.com/mshahrani/c/77hh61OpFl_)
+
 

@@ -843,6 +843,14 @@ $(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.
 </div>
 """
 
+# ╔═╡ 42d3edd7-831f-40b5-9cbc-0ce7b9e2305a
+begin
+	t = symbols("t", real=true)
+	g(t)=-2cos(t)-5
+	plot(x->g(x))
+	diff(g(t),t)
+end
+
 # ╔═╡ a8a7e949-3b21-4c71-910b-1e360c4b3ea4
 md"## Rates of Change"
 
@@ -3570,6 +3578,7 @@ version = "1.4.1+0"
 # ╟─c3e874ae-a802-48d9-b146-fd069574d4ce
 # ╟─318b2cdc-a626-4d56-9616-73aabb1cd20c
 # ╟─b3c3ee35-b0d6-4be3-b427-5a2d1b03a4ca
+# ╠═42d3edd7-831f-40b5-9cbc-0ce7b9e2305a
 # ╟─a8a7e949-3b21-4c71-910b-1e360c4b3ea4
 # ╟─837eace3-6d49-4158-8765-f4c96eb1e9c2
 # ╟─db2e8eaa-2ab8-4e28-b142-54c3ce14e4d3
