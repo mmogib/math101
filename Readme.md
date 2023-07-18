@@ -19,5 +19,7 @@
 - [Section 2.4 (Part 2)](https://itempool.com/mshahrani/c/ADJR8ey4k87) 
 - [Section 3.1](https://itempool.com/mshahrani/c/HQ_1Jt7X_Dp)
 - [Section 3.2](https://itempool.com/mshahrani/c/77hh61OpFl_)
-
+- [Section 3.3](https://itempool.com/mshahrani/c/ZUKO_Srf_bc)
+- [Exam 1](https://itempool.com/mshahrani/c/sAOuuDY6bP9)
+- [Section 3.4](https://itempool.com/mshahrani/c/JWl3tmrHjDV)
 

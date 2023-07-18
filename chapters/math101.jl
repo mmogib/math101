@@ -947,9 +947,135 @@ $(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.
 </div>
 """
 
+# ╔═╡ 396dc79a-824f-4a8e-9b0e-e5aa250f9cdd
+md"""
+# 3.4: The Chain Rule
+__Objectives__
+> - Find the derivative of a composite function using the Chain Rule.
+> - Find the derivative of a function using the General Power Rule.
+> - Simplify the derivative of a function using algebra.
+> - Find the derivative of a transcendental function using the Chain Rule.
+> - Find the derivative of a function involving the natural logarithmic function.
+> - Define and differentiate exponential functions that have bases other than .
+"""
+
+# ╔═╡ eedffba5-fa2d-4c68-8a4e-f25a1e120ad0
+md"## The Chain Rule"
+
+# ╔═╡ 36a9bf9e-ac45-4aac-a431-a8434352aa2e
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ e46d78e1-243a-4b4f-9112-d324364d84ae
+cm"""
+## Transcendental Functions and the Chain Rule
+```math
+\begin{array}{lclrlcl}
+\displaystyle\frac{d}{dx}\left[\sin u\right] &=& (\cos u)u' &,\quad&
+\displaystyle\frac{d}{dx}\left[\cos u\right] &=& -(\sin u)u' \\
+
+\displaystyle\frac{d}{dx}\left[\tan u\right] &=& (\sec^2 u)u' &,\quad&
+\displaystyle\frac{d}{dx}\left[\cot u\right] &=& -(\csc^2 u)u' \\
+
+\displaystyle\frac{d}{dx}\left[\sec u\right] &=& (\sec u\tan u)u' &,\quad&
+\displaystyle\frac{d}{dx}\left[\csc u\right] &=& -(\csc u\cot u)u' \\
+
+\displaystyle\frac{d}{dx}\left[e^u\right] &=& (e^u)u' \\
+
+\end{array}
+```
+"""
+
+# ╔═╡ 42487db3-df5d-4d1e-afda-9ec1ebbf4939
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 2add91dd-4e6c-4201-965b-680eb5f529ec
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ feb7b6b2-e0cf-48cc-bde8-5c8649fdb57b
+md""" 
+# 3.5: Implicit Differentiation
+__objectives__
+> - Distinguish between functions written in implicit form and explicit form.
+> - Use implicit differentiation to find the derivative of a function.
+> - Find derivatives of functions using logarithmic differentiation.
+"""
+
+
+# ╔═╡ 4e1655d7-a0e5-40fd-b89f-4105d3fd300c
+md"## Logarithmic Differentiation"
+
+
+# ╔═╡ efc29c6f-06ec-483e-b243-5c4cd178453b
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 2d351e50-6fc5-4362-bd4b-a563e71929b3
+md"""
+# 3.6: Derivatives of Inverse Functions
+__Objectives__
+> - Find the derivative of an inverse function.
+> - Differentiate an inverse trigonometric function.
+"""
+
+# ╔═╡ d57b4627-d66d-446c-a9ad-2e9ea42954d8
+cm"""
+## Derivative of an Inverse Function
+
+The graph of ``f^{-1}`` is a reflection of the graph of ``f`` in the line ``y=x``. 
+
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/1ofqbbb6cj7bfbxsrexfr/sec3.6_intro.jpg?rlkey=9dp9aep4nuy8x6q1a3b3rzltm&raw=1"))
+
+</div>
+"""
+
+# ╔═╡ 0751712c-9870-46b0-83bc-93093cd0ce0e
+md"""
+## Derivatives of Inverse Trigonometric Functions
+"""
+
+# ╔═╡ 9a7a19ce-1cd7-47e1-9fc5-f8689b0ff5fd
+cm"""
+__Examples__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
 	n,i = symbols("n,i", integer=true)
+
 	function beginBlock(title,subtitle)
 		"""<div style="box-sizing: border-box;">
 		<div style="display: flex;flex-direction: column;border: 6px solid rgba(200,200,200,0.5);box-sizing: border-box;">
@@ -1926,6 +2052,289 @@ Differentiate
 ```math
 y = \frac{1-\cos x}{\sin x}
 ```
+"""
+
+# ╔═╡ 118501bb-51d3-471b-9414-09285b75f0aa
+cm"""
+$(beginTheorem("The Chain Rule"))
+
+If ``y=f(u)`` is a differentiable function of ``u`` and ``u=g(x)`` is a differentiable function of ``x``, then ``y=f((x))`` is a differentiable function of ``x`` and 
+
+```math
+\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}
+```
+
+or, equivalently,
+
+```math
+\frac{d}{dx}\left[f(g(x))\right]=f'(g(x))g'(x)
+```
+
+
+$(endTheorem())
+
+"""
+
+# ╔═╡ cc139ded-19c6-4d71-bb36-5ca5e0e57ea4
+cm"""
+$(beginBlock("Remark",""))
+``{\color{red} \blacksquare}``: Outer function ``\;\;\quad``
+``{\color{cyan} \blacksquare}``: Inner function 
+```math
+\text{If}\quad y={\color{red} f}({\color{cyan} g(x)}) ={\color{red} f}({\color{cyan} u}), \text{ then } 
+```
+
+```math
+y'=\frac{dy}{dx}={\color{red} f'}({\color{cyan} g(x)}){\color{cyan} g'(x)}
+```
+or, equivalently 
+```math
+y'=\frac{dy}{dx}={\color{red} f'}({\color{cyan} u})\frac{d{\color{cyan} u}}{dx}
+```
+
+$(endBlock())
+
+"""
+
+# ╔═╡ dae123ab-a366-4a85-a852-c8c1c87152fa
+cm"""
+$(example("Example","Using the Chain Rule"))
+Find ``\displaystyle \frac{dy}{dx}`` for
+```math
+y=\left(x^2+1\right)^3.
+```
+
+"""
+
+# ╔═╡ 362f0a6f-a92f-489c-a499-6c4cbb12338f
+cm"""
+## The General Power Rule
+$(beginTheorem("The General Power Rule"))
+If ``y=\left[u(x)\right]^n``, where ``u`` is a differentiable function of ``x`` and  is a rational ``n`` number, then
+```math
+\frac{dy}{dx}=n\left[u(x)\right]^{n-1}\frac{dy}{dx}
+```
+or, equivalently,
+```math
+\frac{d}{dx}\left[u(x)\right]^n=n\left[u\right]^{n-1}u'
+```
+$(endTheorem())
+"""
+
+# ╔═╡ 7cf34ea2-72f3-4fc9-9bd6-0803b4684102
+cm"""
+$(example("Example",""))
+Find the derivative of ``\displaystyle y=(3x-2x^2)^3``.
+"""
+
+# ╔═╡ 742aca52-5bc4-455c-bd1e-2e88a6d7a043
+cm"""
+## Simplifying Derivatives
+$(example("Example",""))
+Find the derivative of 
+1. ``\displaystyle f(x)=x^2\sqrt{1-x^2}``.
+1. ``\displaystyle f(x)=\frac{x}{\sqrt[3]{x^2+4}}``.
+"""
+
+# ╔═╡ 1bb2c077-27f1-47c0-978a-bccd8df1b487
+cm"""
+## The Derivative of the Natural Logarithmic Function
+
+$(beginTheorem("Derivative of the Natural Logarithmic Function"))
+Let ``u`` be a differentiable function of ``x``.
+1. ``\displaystyle \frac{d}{dx}\left[\ln x\right]=\frac{1}{x}``, ``x>0``
+2. ``\displaystyle \frac{d}{dx}\left[\ln u\right]=\frac{1}{u}\frac{du}{dx}=\frac{u'}{u}``, ``x>0``
+$(endTheorem())
+
+"""
+
+# ╔═╡ d3076cdb-2550-42bc-b2c1-0c6b303432af
+cm"""
+$(beginTheorem("Derivative Involving Absolute Value"))
+If ``u`` is a differentiable function of ``x`` such that ``u\ne 0``, then
+```math
+\displaystyle \frac{d}{dx}\left[\ln |u|\right]=\frac{u'}{u}
+```
+
+$(endTheorem())
+"""
+
+# ╔═╡ b3e1f838-ca23-409b-afc3-2ca42fb09d8d
+cm"""
+$(example("Examples",""))
+Find ``y'`` for
+1. ``\displaystyle y=\ln\sqrt{x+1}``
+1. ``\displaystyle y=\left(\frac{3x-1}{x^2+3}\right)^2``
+1. ``\displaystyle y=\ln{\left[\frac{x(x^2+1)^2}{\sqrt{2x^3+1}}\right]}``
+"""
+
+# ╔═╡ 4b68b602-31aa-455f-a409-6afb9405e2cf
+cm"""
+## Bases Other than ``e``
+$(beginBlock("Definition of Exponential Function to Base a","")) 
+If ``a`` is a positive real number (``a\ne 1``)  and ``x`` is any real number, then the __exponential function to the base ``a``__ is denoted by ``a^x`` and is defined by
+```math
+a^x = e^{x\ln a}
+```
+
+If ``a=1`` , then ``y=1^x=1`` is a constant function.
+$(endBlock())
+"""
+
+# ╔═╡ a26898e0-0f90-45b5-b789-397371c9ba65
+cm"""
+$(beginBlock("Definition of Logarithmic Function to Base a","")) 
+If ``a`` is a positive real number (``a\ne 1``)  and ``x`` is any __positive__ real number, then the __logarithmic function to the base ``a``__ is denoted by ``\log_a x`` and is defined by
+```math
+\log_a x = \frac{1}{\ln a}\ln x.
+```
+$(endBlock())
+"""
+
+# ╔═╡ d08fad11-d915-4f2f-a9f8-6f42e2a8da79
+cm"""
+$(beginTheorem("Derivatives for Bases Other than e"))
+
+Let ``a`` be a positive real number (``a\ne 1``) and let ``u`` be a differentiable function of ``x``.
+1. ``\displaystyle \frac{d}{dx}[a^x] = (\ln a)a^x``
+1. ``\displaystyle \frac{d}{dx}[a^u] = (\ln a)a^u\frac{du}{dx}``
+1. ``\displaystyle \frac{d}{dx}[\log_a^x] = \frac{1}{(\ln a)x}``
+1. ``\displaystyle \frac{d}{dx}[\log_a^u] = \frac{1}{(\ln a)u}\frac{du}{dx}``
+
+$(endTheorem())
+"""
+
+# ╔═╡ 39c79294-3abd-4b1b-9668-b5bc9c0c7c66
+cm"""
+$(example("Example","Implicit Differentiation"))
+Find ``\displaystyle \frac{dy}{dx}`` given that ``y^3+y^2-5y-x^2=-4``.
+"""
+
+# ╔═╡ 826cfc53-5797-476a-a185-4bee6d4b357c
+cm"""
+$(beginBlock("Guidelines for Implicit Differentiation",""))
+1. Differentiate both sides of the equation with respect to ``x``.
+
+2. Collect all terms involving ``\frac{dy}{dx}`` on the left side of the equation and move all other terms to the right side of the equation.
+
+3. Factor ``\frac{dy}{dx}`` out of the left side of the equation.
+
+4. Solve for ``\frac{dy}{dx}``.
+$(endBlock())
+"""
+
+# ╔═╡ 889c445a-1a62-4467-96a3-3f0974091068
+cm"""
+$(example("Example","Finding the Slope of a Graph Implicitly"))
+Determine the slope of the graph of
+```math
+3(x^2+y^2)^2=100xy
+```
+at the point ``(3,1)``.
+
+"""
+
+# ╔═╡ d1f90c93-760e-472d-ab72-4c6c0a8cb3f0
+cm"""
+$(example("Example","Determining a Differentiable Function"))
+
+Find ``\frac{dy}{dx}`` implicitly for the equation ``\sin y =x``. 
+Then find the largest interval of the form ``-a < y < a`` on which ``y`` is a differentiable function of ``x``.
+
+$(example("Example","Finding the Second Derivative Implicitly"))
+Given ``x^2+y^2=25``, find ``\frac{d^2y}{dx^2}``.
+
+
+"""
+
+# ╔═╡ ea54d534-c6d7-4de4-a55f-a02c9266bec1
+cm"""
+$(beginBlock("Definition","Normal Line"))
+The normal line at a point is the line __perpendicular__ to the tangent line at the point.
+$(endBlock())
+
+$(example("Example (exercise 63)","Normal Lines"))
+Find the equations for the tangent line and normal line to the circle
+```math
+x^2+y^2=25
+```
+at the points ``(4,3)`` and ``(-3,4)``.
+
+"""
+
+# ╔═╡ 05b7bc32-f94d-42f5-ae63-91391da72ca4
+cm"""
+$(example("Example","Logarithmic Differentiation"))
+Find the derivative of
+1. ``\displaystyle y=\frac{(x-2)^2}{\sqrt{x^2+1}}, \qquad x\ne 2.``
+1. ``\displaystyle y=x^{2x}, \qquad x>0.``
+1. ``\displaystyle y=x^{\pi}.``
+"""
+
+# ╔═╡ ca507a8c-e4ba-4498-8a49-0fddac4c7209
+cm"""
+$(beginBlock("Definition","Orthogonal Trajectories"))
+Two graphs (curves) are __orthogonal__ if at their point(s) of intersection, their __tangent lines__ are __perpendicular__ to each other.
+$(endBlock())
+"""
+
+# ╔═╡ 05849508-ceec-4f3f-80c2-dad48921b0b0
+cm"""
+
+$(example("Excercise 81",""))
+
+Are the following curves __orthogonal__?
+
+```math
+2x^2+y^2 = 6,\qquad y^2=4x
+```
+
+"""
+
+# ╔═╡ 79acf8f3-f34b-479d-8fbb-4cfba272865b
+cm"""
+$(beginTheorem("Continuity and Differentiability of Inverse Functions"))
+Let ``f`` be a function whose domain is an interval ``I`` . If ``f`` has an inverse function, then the following statements are true.
+
+1. If ``f`` is continuous on its domain, then ``f^{-1}`` is continuous on its domain.
+
+2. If ``f`` is differentiable on an interval containing ``c`` and ``f'(c)\ne 0``, then ``f^{-1}`` is differentiable at ``f(c)``.
+$(endTheorem())
+"""
+
+# ╔═╡ 26f7d04b-63df-4011-8284-af82913a0e01
+cm"""
+$(beginTheorem("The Derivative of an Inverse Function"))
+Let ``f`` be a function that is differentiable on an interval ``I`` . If ``f`` has an inverse function ``g``, then ``g`` differentiable at any ``x`` for which ``f'(g(x))\ne 0``. Moreover,
+```math
+g'(x) = \frac{1}{f'(g(x))}, \quad f'(g(x))\ne 0
+```
+$(endTheorem())
+"""
+
+# ╔═╡ c377f410-c7a8-4ae4-a901-c7e11066f8cc
+cm"""
+$(example("Example","Graphs of Inverse Functions Have Reciprocal Slopes"))
+Let ``f(x)=x^2,\quad x\geq 0``. Find
+1. ``f^{-1}(x)``
+2. Find the slopes of the graphs of ``f`` and ``f^{-1}`` at the points ``(2,4)`` and ``(4,2)`` respectively
+"""
+
+# ╔═╡ 96700860-baf9-4324-96df-1f54acdee690
+cm"""
+$(beginTheorem("Derivatives of Inverse Trigonometric Functions"))
+Let ``u`` be a differentiable function of ``x``.
+```math
+\begin{array}{lclrlcl}
+\displaystyle\frac{d}{dx}\left[\sin^{-1} u\right] &=& \frac{u'}{\sqrt{1-u^2}} &,\quad&
+\displaystyle\frac{d}{dx}\left[\cos^{-1} u\right] &=& \frac{-u'}{\sqrt{1-u^2}} \\
+\displaystyle\frac{d}{dx}\left[\tan^{-1} u\right] &=& \frac{u'}{1+u^2} &,\quad&
+\displaystyle\frac{d}{dx}\left[\cot^{-1} u\right] &=& \frac{-u'}{1-u^2} \\
+\displaystyle\frac{d}{dx}\left[\sec^{-1} u\right] &=& \frac{u'}{|u|\sqrt{u^2-1}} &,\quad&
+\displaystyle\frac{d}{dx}\left[\csc^{-1} u\right] &=& \frac{-u'}{|u|\sqrt{u^2-1}} \\
+\end{array}
+```
+$(endTheorem())
 """
 
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
@@ -3594,6 +4003,43 @@ version = "1.4.1+0"
 # ╟─6ab25ebb-99bf-490d-bd92-4b8e0036426d
 # ╟─30319bd0-e478-4f9d-9c48-275b9ba9e44a
 # ╟─7c14ced9-4863-4315-b2e4-cd905e462b79
+# ╟─396dc79a-824f-4a8e-9b0e-e5aa250f9cdd
+# ╟─eedffba5-fa2d-4c68-8a4e-f25a1e120ad0
+# ╟─118501bb-51d3-471b-9414-09285b75f0aa
+# ╟─cc139ded-19c6-4d71-bb36-5ca5e0e57ea4
+# ╟─dae123ab-a366-4a85-a852-c8c1c87152fa
+# ╟─36a9bf9e-ac45-4aac-a431-a8434352aa2e
+# ╟─362f0a6f-a92f-489c-a499-6c4cbb12338f
+# ╟─7cf34ea2-72f3-4fc9-9bd6-0803b4684102
+# ╟─742aca52-5bc4-455c-bd1e-2e88a6d7a043
+# ╟─e46d78e1-243a-4b4f-9112-d324364d84ae
+# ╟─42487db3-df5d-4d1e-afda-9ec1ebbf4939
+# ╟─1bb2c077-27f1-47c0-978a-bccd8df1b487
+# ╟─d3076cdb-2550-42bc-b2c1-0c6b303432af
+# ╟─b3e1f838-ca23-409b-afc3-2ca42fb09d8d
+# ╟─4b68b602-31aa-455f-a409-6afb9405e2cf
+# ╟─a26898e0-0f90-45b5-b789-397371c9ba65
+# ╟─d08fad11-d915-4f2f-a9f8-6f42e2a8da79
+# ╟─2add91dd-4e6c-4201-965b-680eb5f529ec
+# ╟─feb7b6b2-e0cf-48cc-bde8-5c8649fdb57b
+# ╟─39c79294-3abd-4b1b-9668-b5bc9c0c7c66
+# ╟─826cfc53-5797-476a-a185-4bee6d4b357c
+# ╟─889c445a-1a62-4467-96a3-3f0974091068
+# ╟─d1f90c93-760e-472d-ab72-4c6c0a8cb3f0
+# ╟─ea54d534-c6d7-4de4-a55f-a02c9266bec1
+# ╟─4e1655d7-a0e5-40fd-b89f-4105d3fd300c
+# ╟─05b7bc32-f94d-42f5-ae63-91391da72ca4
+# ╟─ca507a8c-e4ba-4498-8a49-0fddac4c7209
+# ╟─05849508-ceec-4f3f-80c2-dad48921b0b0
+# ╟─efc29c6f-06ec-483e-b243-5c4cd178453b
+# ╟─2d351e50-6fc5-4362-bd4b-a563e71929b3
+# ╟─d57b4627-d66d-446c-a9ad-2e9ea42954d8
+# ╟─79acf8f3-f34b-479d-8fbb-4cfba272865b
+# ╟─26f7d04b-63df-4011-8284-af82913a0e01
+# ╟─c377f410-c7a8-4ae4-a901-c7e11066f8cc
+# ╟─0751712c-9870-46b0-83bc-93093cd0ce0e
+# ╟─96700860-baf9-4324-96df-1f54acdee690
+# ╟─9a7a19ce-1cd7-47e1-9fc5-f8689b0ff5fd
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e
