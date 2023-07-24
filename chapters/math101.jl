@@ -1072,6 +1072,80 @@ $(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.
 </div>
 """
 
+# ╔═╡ 343aadc6-d64d-4c85-92f8-9787d6af549a
+md"""# 3.7: Related Rates
+__Objectives__
+> - Find a related rate.
+> - Use related rates to solve real-life problems.
+
+## Finding Related Rates
+"""
+
+# ╔═╡ bc02e2d7-9144-4b02-9d4d-18677c69f072
+md"## Problem Solving with Related Rates"
+
+# ╔═╡ e383ae38-a6e2-4c7d-9de5-5040e41259f0
+cm"""
+In __Example 1__
+- __Equation:__ ``y=x^2+3``.
+- __Given:__ ``\displaystyle\frac{dx}{dt}=2`` when ``x=1``.
+- __Find:__ ``\displaystyle\frac{dy}{dt}`` when ``x=1``.
+"""
+
+# ╔═╡ 9a903024-378d-48b1-8aaf-33e9ca846b62
+md"""
+# 3.8: Newton’s Method
+__Objectives__
+> - Approximate a zero of a function using Newton’s Method.
+"""
+
+# ╔═╡ e00a88c6-30f7-48e4-8f8a-ae46de9b4022
+md"## Newton’s Method"
+
+# ╔═╡ 3ac30596-2ff2-4005-9ada-328c3000bdf7
+begin
+	f(x)=x^2-2
+	df(x)=2x
+	x1=1
+	x2=x1-f(x1)/df(x1)
+	x3=x2-f(x2)/df(x2)
+	x4=x3-f(x3)/df(x3)
+end
+
+# ╔═╡ a63e14fe-e7db-4195-97f4-d1195aeffcaa
+cm"""
+__Revision__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ d89b4f6d-fef7-4cd5-a570-d36148bec2b0
+md"""
+# 4.1: Extrema on an Interval
+> - Understand the definition of extrema of a function on an interval.
+> - Understand the definition of relative extrema of a function on an open interval.
+> - Find extrema on a closed interval.
+## Extrema of a Function
+"""
+
+
+# ╔═╡ 28b9e358-75a9-4ede-a08e-724c4b21b4e6
+md"## Relative Extrema and Critical Numbers"
+
+# ╔═╡ 9a8df83a-daba-4274-86d2-c54c9e38ed2d
+md"## Finding Extrema on a Closed Interval"
+
+# ╔═╡ d4d13cb6-2162-4ac3-ac2f-8837c1084e53
+function rotate_xy(θ =-π/20)	
+	x,y,xp,yp = symbols("x,y,xp,yp", real=true)
+	Mv= [cos(θ) -sin(θ);sin(θ) cos(θ)]*[x;y]
+	sol=solve([xp-Mv[1],yp-Mv[2]],[x,y])
+	sol[x],sol[y]
+end
+
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
 	n,i = symbols("n,i", integer=true)
@@ -2329,12 +2403,210 @@ Let ``u`` be a differentiable function of ``x``.
 \displaystyle\frac{d}{dx}\left[\sin^{-1} u\right] &=& \frac{u'}{\sqrt{1-u^2}} &,\quad&
 \displaystyle\frac{d}{dx}\left[\cos^{-1} u\right] &=& \frac{-u'}{\sqrt{1-u^2}} \\
 \displaystyle\frac{d}{dx}\left[\tan^{-1} u\right] &=& \frac{u'}{1+u^2} &,\quad&
-\displaystyle\frac{d}{dx}\left[\cot^{-1} u\right] &=& \frac{-u'}{1-u^2} \\
+\displaystyle\frac{d}{dx}\left[\cot^{-1} u\right] &=& \frac{-u'}{1+u^2} \\
 \displaystyle\frac{d}{dx}\left[\sec^{-1} u\right] &=& \frac{u'}{|u|\sqrt{u^2-1}} &,\quad&
 \displaystyle\frac{d}{dx}\left[\csc^{-1} u\right] &=& \frac{-u'}{|u|\sqrt{u^2-1}} \\
 \end{array}
 ```
 $(endTheorem())
+"""
+
+# ╔═╡ b868c935-c8f8-4d54-9cdc-fa9c2001750a
+cm"""
+$(example("Example 1","Two Rates That Are Related"))
+The variables ``x`` and ``y`` are both differentiable functions of ``t`` and are related by the equation ``y=x^2+3``. Find ``\frac{dy}{dt}`` when ``x=1``, given that ``\frac{dx}{dt}=2``  when ``x=1``.
+"""
+
+# ╔═╡ 9f39ee00-2354-4241-87e6-8241b5b64748
+cm"""
+$(beginBlock("Guidelines for Solving Related-Rate Problems",""))
+1. Identify all given quantities and quantities to be determined. Make a sketch and label the quantities.
+2. Write an equation involving the variables whose rates of change either are given or are to be determined.
+3. Using the Chain Rule, implicitly differentiate both sides of the equation with respect to time ``t``.
+4. After completing __Step 3__, substitute into the resulting equation all known values for the variables and their rates of change. Then solve for the required rate of change.
+$(endBlock())
+"""
+
+# ╔═╡ 162a9893-3284-43d9-874e-3d2da83de481
+cm"""
+$(example("Example 2","Ripples in a Pond"))
+A pebble is dropped into a calm pond, causing ripples in the form of concentric circles, as shown in 
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/tsa1y6h4mzrxgh90mgu7g/sec3.7_ex2.jpg?rlkey=83t5mx5ouq5pykxxb4l5b99yf&raw=1"))
+</div>
+
+The radius ``r`` of the outer ripple is increasing at a constant rate of ``0.5`` meter per second. When the radius is ``2`` meters, at what rate is the total area ``A`` of the disturbed water changing?
+"""
+
+# ╔═╡ 7dda28f9-d181-4535-ac9d-23dce03579dc
+cm"""
+$(example("Example 3","An Inflating Balloon"))
+
+Air is being pumped into a spherical balloon at a rate of ``1.5`` cubic meters per minute. Find the rate of change of the radius when the radius is ``2`` meters
+"""
+
+# ╔═╡ 8cbe782a-be10-4134-966a-0432d50ef817
+cm"""
+$(example("Example 4","The Speed of an Airplane Tracked by Radar"))
+
+An airplane is flying on a flight path that will take it directly over a radar tracking station shown
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/8uyfzay6vkxnv2cb5xqd6/sec3.7_ex4.jpg?rlkey=9mm8uvpw7r5b3bdxgg5qjao41&raw=1"))
+</div>
+
+The distance ``s`` is decreasing at a rate of ``400`` kilometers per hour when ``s=10`` kilometers. What is the speed of the plane?
+"""
+
+# ╔═╡ 6fcbc28c-a73f-42b2-a324-6a028210a7c4
+cm"""
+$(example("Example 5","A Changing Angle of Elevation"))
+
+Find the rate of change in the angle of elevation of the camera shown in 
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/q6yhhiq03sk9mi5o5cqc1/sec3.7_ex5.jpg?rlkey=v2xdeip3io52qwzm9u8o2xu3u&raw=1"))
+</div>
+
+at ``10`` seconds after lift-off.
+"""
+
+# ╔═╡ 9450e9c6-3f97-4e12-812b-a16d6a2591c3
+cm"""
+$(example("Excercise 17",""))
+
+At a sand and gravel plant, sand is falling off a conveyor and onto a conical pile at a rate of ``10`` cubic meters per minute. The diameter of the base of the cone is approximately three times the altitude. At what rate is the height of the pile changing when the pile is ``4`` meters high? (Hint: The formula for the volume of a cone is ``\displaystyle V=\frac{1}{3}\pi r^2h``.)
+"""
+
+# ╔═╡ 6b546815-890e-4cab-9435-f036491c2a3f
+cm"""
+$(beginBlock("Newton’s Method for Approximating the Zeros of a Function",""))
+
+Let ``f(c)=0``, where ``f`` is differentiable on an open interval containing ``c``. Then, to approximate , use these steps.
+
+1. Make an initial estimate ``x_1`` that is close to ``c`` . (A graph is helpful.)
+
+2. Determine a new approximation
+```math
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
+```
+
+3. When ``|x_{n+1}-x_n|`` is within the desired accuracy, let ``x_{n+1}`` serve as the final approximation. Otherwise, return to Step 2 and calculate a new approximation.
+
+Each successive application of this procedure is called an __iteration__.
+$(endBlock())
+"""
+
+# ╔═╡ e65e9cd4-b085-4fb3-b85a-267f94dde8c3
+cm"""
+$(example("Example 1","Using Newton’s Method"))
+Calculate three iterations of Newton’s Method to approximate a zero of ``f(x)=x^2-2``. Use ``x_1=1`` as the initial guess.
+"""
+
+# ╔═╡ d6607daf-ff39-47ce-b6c9-ff56c79ff69c
+cm"""
+$(example("Example 2","Using Newton’s Method"))
+Use Newton’s Method to approximate the zero(s) of
+```math
+f(x)=e^x+x
+```
+Continue the iterations until two successive approximations differ by less than ``0.0001`` .
+"""
+
+# ╔═╡ 356b78ed-4e24-41dd-b65f-ec4f39ddb20e
+cm"""
+$(example("Example 3","An Example in Which Newton’s Method Fails"))
+The function ``f(x)=x^{1/3}`` is not differentiable at ``x=0``. Show that Newton’s Method fails to converge using ``x_1=0.1``.
+"""
+
+# ╔═╡ ce287603-54eb-42ed-8f72-1769f560c68e
+cm"""
+$(beginBlock("Definition of Extrema",""))
+
+Let ``f`` be defined on an interval ``I`` containing ``c``.
+
+1. ``f(c)`` is the __minimum of ``f`` on ``I``__ when ``f(c)\leq f(x)`` for all ``x`` in ``I``.
+
+2. ``f(c)`` is the __maximum of ``f`` on ``I``__ when ``f(c)\geq f(x)`` for all ``x`` in ``I``.
+
+- The __minimum__ and __maximum__ of a function on an interval are the __extreme values__, or __extrema__ (the singular form of extrema is extremum), of the function on the interval. 
+- The __minimum__ and __maximum__ of a function on an interval are also called the __absolute minimum__ and __absolute maximum__, or the __global minimum__ and __global maximum__, on the interval. Extrema can occur at interior points or endpoints of an interval. 
+- __Extrema__ that occur at the endpoints are called __endpoint extrema__.
+$(endBlock())
+"""
+
+# ╔═╡ 12d76fc1-5856-434e-aeca-69e78d0d0903
+cm"""
+$(beginTheorem("The Extreme Value Theorem"))
+If ``f`` is __continuous__ on a __closed interval ``[a,b]``__ , then ``f`` has both a __minimum__ and a __maximum__ on the interval.
+$(endTheorem())
+"""
+
+# ╔═╡ 77a9b72d-bb4f-40ba-ab75-c4c2ca97a1ad
+cm"""
+$(beginBlock("Definition of Relative Extrema",""))
+1. If there is an open interval containing ``c`` on which ``f(c)`` is a __maximum__, then ``f(c)`` is called a __relative maximum of ``f``__, or you can say that ``f`` has a __relative maximum at ``(c,f(c))``__.
+
+2. If there is an open interval containing ``c`` on which ``f(c)`` is a __minimum__, then ``f(c)`` is called a __relative minimum of ``f``__, or you can say that ``f`` has a __relative minimum at ``(c,f(c))``__.
+
+- The __plural__ of relative maximum is __relative maxima__, and 
+- the __plural__ of relative minimum is __relative minima__. 
+- __Relative maximum__ and __relative minimum__ are sometimes called __local maximum__ and __local minimum__, respectively.
+
+$(endBlock())
+"""
+
+# ╔═╡ af0a79aa-5cf7-45ad-8680-0eeb953df369
+cm"""
+$(beginBlock("Definition of a Critical Number",""))
+Let ``f`` be defined at ``c``. If ``f'(c)=0`` or if ``f`` is not differentiable at ``c``, then ``c`` is a __critical number__ of ``f``.
+$(endBlock())
+
+$(beginTheorem("Relative Extrema Occur Only at Critical Numbers"))
+If ``f`` has a relative minimum or relative maximum at ``c``, then ``c`` is a critical number of ``f``.
+$(endTheorem())
+
+"""
+
+# ╔═╡ 1bebdd41-f2c5-4576-8100-c331e2d0164b
+cm"""
+$(beginBlock("Guidelines for Finding Extrema on a Closed Interval",""))
+
+To find the extrema of a continuous function ``f`` on a closed interval ``[a,b]``, use these steps.
+
+1. Find the __critical numbers__ of ``f`` in ``(a,b)``.
+
+2. Evaluate ``f`` at each critical number in ``(a,b)``.
+
+3. Evaluate ``f`` at each endpoint of ``[a,b]``..
+
+4. The least of these values is the minimum. The greatest is the maximum.
+$(endBlock())
+"""
+
+# ╔═╡ f927c000-2489-401e-a39b-554d56162099
+cm"""
+$(example("Example 2","Finding Extrema on a Closed Interval"))
+Find the extrema of 
+```math
+f(x)=3x^4-4x^3
+```
+on the interval ``[-1,2]``.
+
+$(example("Example 3","Finding Extrema on a Closed Interval"))
+Find the extrema of 
+```math
+f(x)=2x-3x^{2/3}
+```
+on the interval ``[-1,3]``.
+
+$(example("Example 4","Finding Extrema on a Closed Interval"))
+Find the extrema of 
+```math
+f(x)=2\sin x - \cos 2x
+```
+on the interval ``[0,2\pi]``.
 """
 
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
@@ -4040,6 +4312,34 @@ version = "1.4.1+0"
 # ╟─0751712c-9870-46b0-83bc-93093cd0ce0e
 # ╟─96700860-baf9-4324-96df-1f54acdee690
 # ╟─9a7a19ce-1cd7-47e1-9fc5-f8689b0ff5fd
+# ╟─343aadc6-d64d-4c85-92f8-9787d6af549a
+# ╟─b868c935-c8f8-4d54-9cdc-fa9c2001750a
+# ╟─bc02e2d7-9144-4b02-9d4d-18677c69f072
+# ╟─e383ae38-a6e2-4c7d-9de5-5040e41259f0
+# ╟─9f39ee00-2354-4241-87e6-8241b5b64748
+# ╟─162a9893-3284-43d9-874e-3d2da83de481
+# ╟─7dda28f9-d181-4535-ac9d-23dce03579dc
+# ╟─8cbe782a-be10-4134-966a-0432d50ef817
+# ╟─6fcbc28c-a73f-42b2-a324-6a028210a7c4
+# ╟─9450e9c6-3f97-4e12-812b-a16d6a2591c3
+# ╟─9a903024-378d-48b1-8aaf-33e9ca846b62
+# ╟─e00a88c6-30f7-48e4-8f8a-ae46de9b4022
+# ╟─6b546815-890e-4cab-9435-f036491c2a3f
+# ╟─e65e9cd4-b085-4fb3-b85a-267f94dde8c3
+# ╠═3ac30596-2ff2-4005-9ada-328c3000bdf7
+# ╟─d6607daf-ff39-47ce-b6c9-ff56c79ff69c
+# ╟─356b78ed-4e24-41dd-b65f-ec4f39ddb20e
+# ╟─a63e14fe-e7db-4195-97f4-d1195aeffcaa
+# ╟─d89b4f6d-fef7-4cd5-a570-d36148bec2b0
+# ╟─ce287603-54eb-42ed-8f72-1769f560c68e
+# ╟─12d76fc1-5856-434e-aeca-69e78d0d0903
+# ╟─28b9e358-75a9-4ede-a08e-724c4b21b4e6
+# ╟─77a9b72d-bb4f-40ba-ab75-c4c2ca97a1ad
+# ╟─af0a79aa-5cf7-45ad-8680-0eeb953df369
+# ╟─9a8df83a-daba-4274-86d2-c54c9e38ed2d
+# ╟─1bebdd41-f2c5-4576-8100-c331e2d0164b
+# ╟─f927c000-2489-401e-a39b-554d56162099
+# ╟─d4d13cb6-2162-4ac3-ac2f-8837c1084e53
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e

@@ -22,4 +22,5 @@
 - [Section 3.3](https://itempool.com/mshahrani/c/ZUKO_Srf_bc)
 - [Exam 1](https://itempool.com/mshahrani/c/sAOuuDY6bP9)
 - [Section 3.4](https://itempool.com/mshahrani/c/JWl3tmrHjDV)
-
+- [Section 3.5](https://itempool.com/mshahrani/c/NO1cKVczozj)
+- [Section 3.6](https://itempool.com/mshahrani/c/89mwNsDKeyM)
