@@ -1138,13 +1138,51 @@ md"## Relative Extrema and Critical Numbers"
 # ╔═╡ 9a8df83a-daba-4274-86d2-c54c9e38ed2d
 md"## Finding Extrema on a Closed Interval"
 
-# ╔═╡ d4d13cb6-2162-4ac3-ac2f-8837c1084e53
-function rotate_xy(θ =-π/20)	
-	x,y,xp,yp = symbols("x,y,xp,yp", real=true)
-	Mv= [cos(θ) -sin(θ);sin(θ) cos(θ)]*[x;y]
-	sol=solve([xp-Mv[1],yp-Mv[2]],[x,y])
-	sol[x],sol[y]
-end
+# ╔═╡ 9f510483-f0eb-4e39-89bd-321f7b7931d4
+cm"""
+__Revision__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ dfa06187-b6f5-4548-bc6d-39ec9ffe7098
+md"""
+# 4.2: Rolle’s Theorem and the Mean Value Theorem
+__Objectives__
+> - Understand and use Rolle’s Theorem.
+> - Understand and use the Mean Value Theorem.
+
+## Rolle’s Theorem
+"""
+
+# ╔═╡ 1cd56567-aa5d-489e-a9b5-8f65d7df810b
+md"## The Mean Value Theorem"
+
+# ╔═╡ 200d1770-94aa-4780-8e13-a5b268236cec
+cm"""
+__Revision__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ f0ce410f-d502-43af-8eed-a2e06aa0492e
+md"""
+# 4.3: Increasing and Decreasing Functions and the First Derivative Test
+__Objectives__
+> - Determine intervals on which a function is increasing or decreasing.
+> - Apply the First Derivative Test to find relative extrema of a function.
+
+## Increasing and Decreasing Functions
+"""
+
+# ╔═╡ b5107032-e1a0-42ed-9618-21e8228b2074
+md"## The First Derivative Test"
 
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
@@ -2609,6 +2647,115 @@ f(x)=2\sin x - \cos 2x
 on the interval ``[0,2\pi]``.
 """
 
+# ╔═╡ b266bff3-1990-4ded-b7f4-a1f0d8e622fe
+cm"""
+$(beginTheorem("Rolle’s Theorem"))
+
+Let ``f`` be continuous on the closed interval ``[a,b]`` and differentiable on the open interval ``(a,b)``. If ``f(a)=f(b)``, then there is at least one number ``c`` in ``(a,b)`` such that ``f'(c)=0``.
+$(endTheorem())
+"""
+
+# ╔═╡ 447920f6-9120-47e0-a46c-0a217bdfc1af
+cm"""
+$(example("Example 1","Illustrating Rolle’s Theorem"))
+
+Find the two ``x``-intercepts of
+```math
+f(x)=x^2-3x+2
+```
+and show that ``f'(x)=0`` at some point between the two ``x``-intercepts.
+
+$(example("Example 2","Illustrating Rolle’s Theorem"))
+Let ``f(x)=x^4-2x^2``. Find all values of ``c`` in the interval ``(-2,2)`` such that ``f'(c)=0``.
+"""
+
+# ╔═╡ 3746f3eb-c4d8-4461-ad53-c9f7bb04f385
+cm"""
+$(beginTheorem("The Mean Value Theorem"))
+If ``f`` is continuous on the closed interval ``[a,b]`` and differentiable on the open interval ``(a,b)``, then there exists a number ``c`` in ``(a,b)`` such that
+```math
+f'(c)=\frac{f(b)-f(a)}{b-a}.
+```
+$(endTheorem())
+"""
+
+# ╔═╡ b8acea39-63e8-45fa-8214-eb8e6f13ff96
+cm"""
+$(example("Example",""))
+Consider the graph of the function ``f(x)=-x^2+5``.
+
+1. Find the equation of the secant line joining the points ``(-1,4)`` and ``(2,1)``.
+2. Use the Mean Value Theorem to determine a point ``c`` in the interval ``(-1,2)`` such that the tangent line at ``c`` is parallel to the secant line.
+3. Find the equation of the tangent line through ``c``.
+"""
+
+# ╔═╡ b3fb3115-9c50-4bef-bdf5-28c9f424d331
+cm"""
+$(beginBlock("Definitions of Increasing and Decreasing Functions",""))
+
+- A function ``f`` is __increasing__ on an interval when, for any two numbers ``x_1`` and ``x_2`` in the interval, ``x_1<x_2`` implies ``f(x_1)<f(x_2)``.
+- A function ``f`` is __descreasing__ on an interval when, for any two numbers ``x_1`` and ``x_2`` in the interval, ``x_1<x_2`` implies ``f(x_1)>f(x_2)``.
+
+$(endBlock())
+"""
+
+# ╔═╡ 53ddfdbb-3e5b-4b29-abfd-8b86ef46529d
+cm"""
+$(beginTheorem("Test for Increasing and Decreasing Functions"))
+
+Let ``f`` be a function that is continuous on the closed interval ``[a,b]`` and differentiable on the open interval ``(a,b)``.
+
+1. If ``f'(x)>0`` for all ``x`` in ``(a,b)``, then ``f`` is __increasing__ on ``[a,b]``.
+1. If ``f'(x)<0`` for all ``x`` in ``(a,b)``, then ``f`` is __decreasing__ on ``[a,b]``.
+1. If ``f'(x)=0`` for all ``x`` in ``(a,b)``, then ``f`` is __constant__ on ``[a,b]``.
+
+$(endTheorem())
+"""
+
+# ╔═╡ d5fc9ba7-376b-4322-a744-2c960d3e649e
+cm"""
+$(example("Example 1","Intervals on Which  Is Increasing or Decreasing"))
+Find the open intervals on which ``f(x)=x^3-\frac{3}{2}x^2`` is increasing or decreasing.
+"""
+
+# ╔═╡ e5c83d3d-d793-46c3-8f58-8ed5cdd2a909
+cm"""
+$(beginTheorem("The First Derivative Test"))
+
+Let ``c`` be a critical number of a function ``f`` that is continuous on an open interval ``I`` containing ``c``. If ``f`` is differentiable on the interval, except possibly at ``c``, then ``f(c)`` can be classified as follows.
+
+1. If ``f'(x)`` changes from negative to positive at ``c``, then ``f`` has a __relative minimum at ``c``__.
+
+2. If ``f'(x)`` changes from positive to negative at ``c``, then ``f`` has a __relative maximum at ``c``__.
+
+3. If ``f'(x)`` is positive on both sides of ``c`` or negative on both sides of ``c``, then ``f(c)`` is neither a relative minimum nor a relative maximum.
+$(endTheorem())
+"""
+
+# ╔═╡ 0bddc2a4-e177-48fc-b719-590fb9bfa51d
+cm"""
+$(example("Example 2","Applying the First Derivative Test"))
+
+Find the relative extrema of 
+```math
+f(x)=\frac{1}{2}x-\sin x
+```
+in the interval ``(0,2\pi)``.
+
+$(example("Example 3","Applying the First Derivative Test"))
+
+Find the relative extrema of 
+```math
+f(x)=\left(x^2-4\right)^{2/3}.
+```
+
+$(example("Example 4","Applying the First Derivative Test"))
+
+Find the relative extrema of 
+```math
+f(x)=\frac{x^4+1}{x^2}.
+"""
+
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 begin
 	function reimannSum(f, n, a, b; method="l", color=:green, plot_it=false)
@@ -2656,6 +2803,14 @@ begin
 
     $p
     """
+end
+
+# ╔═╡ d4d13cb6-2162-4ac3-ac2f-8837c1084e53
+function rotate_xy(θ =-π/20)	
+	x,y,xp,yp = symbols("x,y,xp,yp", real=true)
+	Mv= [cos(θ) -sin(θ);sin(θ) cos(θ)]*[x;y]
+	sol=solve([xp-Mv[1],yp-Mv[2]],[x,y])
+	sol[x],sol[y]
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -4339,9 +4494,24 @@ version = "1.4.1+0"
 # ╟─9a8df83a-daba-4274-86d2-c54c9e38ed2d
 # ╟─1bebdd41-f2c5-4576-8100-c331e2d0164b
 # ╟─f927c000-2489-401e-a39b-554d56162099
-# ╟─d4d13cb6-2162-4ac3-ac2f-8837c1084e53
+# ╟─9f510483-f0eb-4e39-89bd-321f7b7931d4
+# ╟─dfa06187-b6f5-4548-bc6d-39ec9ffe7098
+# ╟─b266bff3-1990-4ded-b7f4-a1f0d8e622fe
+# ╟─447920f6-9120-47e0-a46c-0a217bdfc1af
+# ╟─1cd56567-aa5d-489e-a9b5-8f65d7df810b
+# ╟─3746f3eb-c4d8-4461-ad53-c9f7bb04f385
+# ╟─b8acea39-63e8-45fa-8214-eb8e6f13ff96
+# ╟─200d1770-94aa-4780-8e13-a5b268236cec
+# ╟─f0ce410f-d502-43af-8eed-a2e06aa0492e
+# ╟─b3fb3115-9c50-4bef-bdf5-28c9f424d331
+# ╟─53ddfdbb-3e5b-4b29-abfd-8b86ef46529d
+# ╟─d5fc9ba7-376b-4322-a744-2c960d3e649e
+# ╟─b5107032-e1a0-42ed-9618-21e8228b2074
+# ╟─e5c83d3d-d793-46c3-8f58-8ed5cdd2a909
+# ╟─0bddc2a4-e177-48fc-b719-590fb9bfa51d
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
+# ╟─d4d13cb6-2162-4ac3-ac2f-8837c1084e53
 # ╠═4e4a8aec-cb96-41b1-b5da-c9510e0fe09e
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
