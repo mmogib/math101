@@ -1184,6 +1184,287 @@ __Objectives__
 # ╔═╡ b5107032-e1a0-42ed-9618-21e8228b2074
 md"## The First Derivative Test"
 
+# ╔═╡ 2a7acbef-d1ce-401a-896c-8ce09d2e6114
+md"""
+# 4.4: Concavity and the Second Derivative Test
+__Objectives__
+> - Determine intervals on which a function is concave upward or concave downward.
+> - Find any points of inflection of the graph of a function.
+> - Apply the Second Derivative Test to find relative extrema of a function.
+
+## Concavity
+
+"""
+
+# ╔═╡ a7d9c7a2-1258-4931-a9bd-0f3a9ac44860
+cm"""
+__Introduction__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 691021f4-9992-49bf-8096-002b57baea94
+md"## Points of Inflection"
+
+# ╔═╡ e17f40cf-5bb2-49e5-a3b6-4d255198e8e6
+md"## The Second Derivative Test"
+
+# ╔═╡ 88d86a2d-0f99-4419-8fa2-f4783230c970
+cm"""
+__Exercises__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 7466af13-f7dd-4885-894d-0bc01e1da054
+md"""
+# 5.6: Indeterminate Forms and L’Hôpital’s Rule
+__Objectives__
+> - Recognize limits that produce indeterminate forms.
+> - Apply L’Hôpital’s Rule to evaluate a limit.
+## Indeterminate Forms
+The forms
+```math
+\frac{0}{0}, \frac{\infty}{\infty}
+```
+are called __indeterminate__ because 
+- they do not guarantee that a limit exists, 
+- nor do they indicate what the limit is, if one does exist. 
+
+__Remark__
+There are other indeterminate forms such
+- ``0\cdot\infty``
+- ``1^{\infty}``
+- ``\infty^0``
+- ``0^0``
+- ``\infty - \infty``
+
+
+## L’Hôpital’s Rule
+"""
+
+# ╔═╡ 4b58a4bd-1b24-4271-b717-43efd32a56f6
+md"""
+# 4.6: A Summary of Curve Sketching
+__Objectives__
+> - Analyze and sketch the graph of a function.
+
+## Analyzing the Graph of a Function
+"""
+
+# ╔═╡ efa779aa-373c-4afb-8908-bdd8a2db2498
+cm"""
+Usefull concepts in analyzing the graph of a function.
+- Info from ``f``:
+	- ``x``-intercepts and ``y``-intercepts __(Section 1.1)__
+	- Symmetry __(Section 1.1)__ and Periodicity
+	- Domain and range __(Section 1.3)__
+	- Continuity __(Section 2.4)__
+	- Vertical asymptotes __(Section 2.5)__
+	- Horizontal asymptotes __(Section 4.5)__
+	- Infinite limits at infinity __(Section 4.5)__
+- Info from ``f'``:
+	- Differentiability __(Section 3.1)__
+	- Relative extrema __(Section 4.1)__
+	- Increasing and decreasing functions __(Section 4.3)__
+- Info from ``f''``:
+	- Concavity __(Section 4.4)__
+	- Points of inflection __(Section 4.4)__
+"""
+
+# ╔═╡ a9d29288-d4ef-4c13-91e1-fe9ba19dacb3
+cm"""
+- ``f`` info
+	- Damain: all real numners except ``\pm 2``.
+	- Inctercepts: 
+		- ``x-``intercepts: ``(-3,0)`` and ``(3,0)``.
+		- ``y-``untercepts: ``(0,\frac{9}{2})``.
+	- Symmetry: The graph of ``f`` is symmetric with respect to ``y-``axis.
+	- Asymptotes:
+		- __V.A__: ``x=\pm 2``
+		- __H.A__: ``y=2``
+- ``f'`` info: ``\displaystyle f'(x)=\frac{20x}{(x^2-4)^2}`` 
+	- Critical numbers: ``x=0``.
+	- Increasing/Decreasing: 
+		- ``f`` is decreasing on ``(-\infty,-2)\cup (-2,0)``
+		- ``f`` is increasing on ``(0,2)\cup (2,\infty)``
+	- Local extrema;
+		- ``f`` has a local minimum at ``(0,\frac{9}{2})``.
+- ``f''`` info: ``\displaystyle f''(x)=\frac{-20(3x^2+4)}{(x^2-4)^3}``
+	- Inflection points: none
+	- Concavity:
+		- __Concave upwords__: ``(-2,2)``.
+		- __Concave downwords__: ``(-\infty,-2)\cup (2,\infty)``.
+
+
+"""
+
+# ╔═╡ 7d531681-d435-46c3-9206-1a75324dc3b5
+
+
+# ╔═╡ f431e7b3-612a-452f-8a82-93096efc8d17
+md"""
+# 4.7: Optimization Problems
+__Objectives__
+> - Solve applied minimum and maximum problems.
+
+## Applied Minimum and Maximum Problems
+"""
+
+# ╔═╡ a9795eba-f3fa-4c21-be7b-b7d7d48f9a9a
+(108-36)/24
+
+# ╔═╡ 73ed74d8-e0af-4423-98af-64917c698a2a
+begin
+	A(r) = π*r^2 + (1-(π/2)*r)^2
+	A(0),A(2/(4+π)),A(2/π)
+end
+
+# ╔═╡ f27873eb-bf75-4ccb-b028-4df8b881098a
+md"""
+# 4.8: Differentials
+__Objectives__
+> - Understand the concept of a tangent line approximation.
+> - Compare the value of the differential, ``dy``, with the actual change in ``y, \Delta y``.
+> - Estimate a propagated error using a differential.
+> - Find the differential of a function using differentiation formulas.
+## Tangent Line Approximations
+"""
+
+# ╔═╡ e4ac1646-bfa8-49ad-9853-fee698f342cc
+begin
+	h(x) = 1 + sin(x)
+	LL(x) = 1 + x
+	c=5
+	h(c), LL(c)
+end
+
+# ╔═╡ 8afb2087-db74-4993-88eb-aa3216aa3249
+
+
+# ╔═╡ 6e201766-71ff-469f-8914-c558a522e924
+md"## Differentials"
+
+# ╔═╡ 1e839421-ece5-4d6b-8e03-97b4ee1998a7
+cm"""
+Let
+- ``\Delta x``: the change in ``x`` (i.e. ``\Delta x = x -c ``)
+- ``\Delta y``: the change in ``y``
+So,
+```math
+\begin{array}{lcll}
+\Delta y &=& f(c+\Delta x)-f(c) & \quad \color{red}{\text{Actual change in } y}\\
+	 	&\approx& f'(c)\Delta x & \quad \color{red}{\text{Approximate change in } y}\\
+\end{array}
+```
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/owl2ma603l6vbo1rthdij/fig4.63.jpg?rlkey=d3n13wmcc25schsx1azen4c09&raw=1"))
+</div>
+
+"""
+
+# ╔═╡ d217087c-3959-4423-bd9a-9718ba5a3a39
+(1.01)^2-1
+
+# ╔═╡ 7f742b67-5a03-4a34-b81c-12d527225558
+md"## Error Propagation"
+
+# ╔═╡ 3570ab4f-e1d1-4659-a0a9-dc19a5b097b2
+cm"""
+```math
+f(x+\Delta x) - f(x) =\Delta y
+```
+- ``\Delta x``: Measurement error
+- ``f(x+\Delta x)``: Exact value
+- ``f(x)``: Measured value
+- ``\Delta y``: Propagated error
+"""
+
+# ╔═╡ bf40ce5f-c2c7-4e5f-9597-09d3c93b8f3b
+md"## Calculating Differentials"
+
+
+# ╔═╡ 699ba113-feb8-421f-b4a2-dd1338a41f8f
+cm"""
+- Each of the differentiation rules that you studied in Chapter 3 can be written in __differential form__.
+"""
+
+# ╔═╡ 5a99f82f-8bb4-458c-b487-cb8cf244e858
+md"""
+# 5.1: Antiderivatives and Indefinite Integration
+__Objectives__
+> - Write the general solution of a differential equation and use indefinite integral notation for antiderivatives.
+> - Use basic integration rules to find antiderivatives.
+> - Find a particular solution of a differential equation.
+"""
+
+# ╔═╡ 199f412a-33f9-4cbb-87c4-52d64b6fb566
+md"## Antiderivatives"
+
+# ╔═╡ c579de3e-fa2c-4564-93d6-cbad24fb8b65
+md"## Basic Integration Rules"
+
+# ╔═╡ 5887527b-2796-48b9-9efd-b7bb148db30d
+cm"""
+```math
+\int F'(x) dx = F(x) + C\quad \color{red}{\text{Integration is the "inverse" of differentiation}}
+```
+if `` \int f(x) dx = F(x) + C``, then
+```math
+\frac{d}{dx}\left[\int f(x) dx\right] = f(x)\quad \color{red}{\text{Differentiation is the "inverse" of integration}}
+```
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/8x1oywgwe8jnzkkc6e1oy/int_table.png?rlkey=bvwbev2lgeq4t2trw74uggq9h&raw=1"))
+</div>
+
+"""
+
+# ╔═╡ 9ff92540-43a8-4959-8868-ff1a99697819
+cm"""
+__Example__
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/s/cat9ots4ausfzyc/qrcode_itempool.com_kfupm.png?raw=1",:width=>350))
+
+</div>
+"""
+
+# ╔═╡ 601f5751-ffa4-4a96-989f-ef7ab90b7aa3
+md"## Initial Conditions and Particular Solutions"
+
+# ╔═╡ 6b547114-da51-4cd0-940a-4f930621ac7b
+cm"""
+- In many applications of integration, you are given enough information to determine a __particular solution__. 
+- To do this, you need only know the value of ``y=F(x)`` for one value of ``x``. This information is called an __initial condition__.
+"""
+
+# ╔═╡ 9603c5f6-d217-4971-8776-a36f96787769
+md"__Exasmples__"
+
+# ╔═╡ 498b99af-28b9-4c7a-bf7a-4111784e7516
+md"""
+# 5.9: Hyperbolic Functions
+__Objectives__
+> - Develop properties of hyperbolic functions.
+> - Differentiate and integrate hyperbolic functions.
+> - Develop properties of inverse hyperbolic functions.
+> - Differentiate and integrate functions involving inverse hyperbolic functions.
+## Hyperbolic Functions
+"""
+
+# ╔═╡ 5ddf96e0-8c11-43cd-af50-9bd303666a4f
+md"""
+## Differentiation and Integration of Hyperbolic Functions
+"""
+
 # ╔═╡ 90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 begin
 	n,i = symbols("n,i", integer=true)
@@ -2754,6 +3035,532 @@ $(example("Example 4","Applying the First Derivative Test"))
 Find the relative extrema of 
 ```math
 f(x)=\frac{x^4+1}{x^2}.
+"""
+
+# ╔═╡ ee435810-e783-4e97-bf6f-fe7a28b19a33
+cm"""
+$(beginBlock("Definition of Concavity",""))
+Let ``f`` be differentiable on an open interval ``I``. The graph of ``f`` is 
+- ⬆ *concave upward* on ``I`` when __``f'`` is increasing on the interval__.
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/3ace5vsptu9w12uocd3mt/sec_4_4_1.png?rlkey=vktxsiotp4kf5jee1p1gbcj9h&raw=1"))
+</div>
+
+- ⬇ *concave downward* on ``I`` when __``f'``  is decreasing on the interval__.
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/fq8meguboqrwe652sj8n4/sec_4_4_2.png?rlkey=4l4wexbkdvk218xjkjymri89t&raw=1"))
+</div>
+
+$(endBlock())
+"""
+
+# ╔═╡ d0d1295e-576a-4e01-8272-e82abc18fa86
+cm"""
+$(beginTheorem("Test for Concavity"))
+
+Let ``f`` be a function whose second derivative exists on an open interval ``I``.
+
+1. If ``f''(x)>0`` for all ``x`` in ``I``, then the graph of ``f`` is __concave upward__ on ``I``.
+
+2. If ``f''(x)<0`` for all ``x`` in ``I``, then the graph of ``f`` is __concave downward__ on ``I``.
+
+$(endTheorem())
+
+"""
+
+# ╔═╡ 20ab5b13-7386-4908-bb5b-31f364ff0463
+cm"""
+$(example("Example 2","Determining Concavity"))
+Determine the open intervals on which the graph of
+```math
+f(x)=\frac{x^2+1}{x^2-4}
+```
+is concave upward or concave downward.
+"""
+
+# ╔═╡ 2e8da35a-daab-4adf-94a7-75ed20e07fa4
+cm"""
+$(beginBlock("Definition of Point of Inflection",""))
+Let ``f`` be a function that is continuous on an open interval, and let ``c`` be a point in the interval. If the graph of ``f`` has a tangent line at the point ``(c,f(c))``, then this point is __a point of inflection__ of the graph of ``f`` when the concavity of  changes from upward to downward (or downward to upward) at the point.
+
+$(endBlock())
+
+"""
+
+# ╔═╡ 0af9fbea-48c0-4dc3-88b5-186e413f9576
+cm"""
+$(beginTheorem("Points of Inflection"))
+If ``(c,f(c))`` is a point of inflection of the graph of ``f``, then either ``f''(c)=0`` or ``f''(c)`` does not exist.
+$(endTheorem())
+"""
+
+# ╔═╡ 0bbd39a3-39a1-43e6-acaf-e23bea88f99f
+cm"""
+$(example("Example 3","Finding Points of Inflection"))
+Determine the points of inflection and discuss the concavity of the graph of
+```math
+f(x) = x^4 - 4x^3.
+```
+"""
+
+
+# ╔═╡ 2ccf9965-4575-4ea1-9adf-39bdbd97ba8f
+cm"""
+$(beginTheorem("Second Derivative Test"))
+Let ``f`` be a function such that ``f'(c)=0`` and the second derivative of ``f`` exists on an open interval containing ``c``.
+
+1. If ``f''(c)>0``, then ``f`` has a __relative minimum__ at ``(c,f(c))``.
+
+2. If ``f''(c)<0``, then ``f`` has a __relative maximum__ at ``(c,f(c))``.
+
+3. If ``f''(x)=0``, then the test fails. That is, ``f`` may have a relative maximum, a relative minimum, or neither. In such cases, you can use the __First Derivative Test__.
+
+$(endTheorem())
+"""
+
+# ╔═╡ 856bf6d7-901b-4111-a89b-6f54785c06e2
+cm"""
+$(example("Example 4","Using the Second Derivative Test"))
+
+Find the relative extrema of
+```math
+f(x) = -3x^5 + 5x^3.
+```
+
+"""
+
+# ╔═╡ c6046798-864c-4d4a-9a19-0fa2915bc156
+cm"""
+$(beginTheorem("The Extended Mean Value Theorem"))
+If ``f`` and ``g`` are differentiable on an open interval ``(a,b)`` and continuous on ``[a,b]`` such that ``g'(x)\neq 0`` for any ``x`` in ``(a,b)``, then there exists a point ``c`` in ``(a,b)`` such that
+```math
+\frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}.
+```
+$(endTheorem())
+
+
+$(beginTheorem("L’Hôpital’s Rule"))
+
+Let ``f`` and ``g`` be functions that are differentiable on an open interval ``(a,b)`` containing ``c``, except possibly at ``c`` itself. Assume that ``g'(x)\neq 0`` for all ``x`` in ``(a,b)``, except possibly at ``c`` itself. If the limit of ``\frac{f(x)}{g(x)}`` as ``x`` approaches ``c`` produces the indeterminate form ``\frac{0}{0}``, then
+```math
+\lim_{x\to c}\frac{f(x)}{g(x)}=\lim_{x\to c}\frac{f'(x)}{g'(x)}
+```
+provided the limit on the right exists (or is infinite). This result also applies when the limit of ``\frac{f(x)}{g(x)}`` as ``x`` approaches ``c`` produces any one of the indeterminate forms ``\frac{\infty}{\infty}``, ``\frac{(-\infty)}{\infty}``, ``\frac{\infty}{(-\infty)}``, or ``\frac{(-\infty)}{(-\infty)}``.
+$(endTheorem())
+"""
+
+# ╔═╡ 30aa50f7-5e1e-402a-92a8-3198762ba87a
+cm"""
+$(beginBlock("Remarks",""))
+L’Hôpital’s Rule can also be applied to __one-sided limits__. For instance, if the limit of ``f(x)/g(x)`` as ``x`` approaches ``c`` from the right produces the indeterminate form ``0/0``, then
+```math
+\lim_{x\to c^+}\frac{f(x)}{g(x)}=\lim_{x\to c^+}\frac{f'(x)}{g'(x)}
+```
+provided the limit exists (or is infinite).
+$(endBlock())
+"""
+
+# ╔═╡ 80dd84ef-40a7-4704-b264-fdcbfa69eab1
+cm"""
+$(example("Example 1","Indeterminate Form  0/0"))
+Evaluate 
+```math
+\lim_{x\to 0}\frac{e^x-1}{x}.
+```
+$(example("Example 2","Indeterminate Form  ∞/∞"))
+Evaluate 
+```math
+\lim_{x\to \infty}\frac{\ln x}{x}.
+```
+
+$(example("Example 3","Applying L’Hôpital’s Rule More than Once"))
+Evaluate 
+```math
+\lim_{x\to -\infty}\frac{x^2}{e^{-x}}.
+```
+
+$(example("Example 4","Indeterminate Form  0⋅∞"))
+Evaluate 
+```math
+\lim_{x\to \infty}e^{-x}\sqrt{x}.
+```
+
+
+"""
+
+# ╔═╡ c41ac604-774c-41d8-b1a5-afa64c47f541
+cm"""
+$(example("Example 5","Indeterminate Form  1∞"))
+Evaluate 
+```math
+\lim_{x\to \infty}\left(1+\frac{1}{x}\right)^x.
+```
+"""
+
+# ╔═╡ da62a3db-5f99-47e7-8f19-4ae7eb47bcb5
+cm"""
+$(example("Example 6","Indeterminate Form  0⁰"))
+Evaluate 
+```math
+\lim_{x\to 0^+}\left(\sin x\right)^x.
+```
+"""
+
+# ╔═╡ eeab5d1b-bb07-47b0-b389-6d18efb6dfc9
+cm"""
+$(example("Example 7","Indeterminate Form  ∞-∞"))
+Evaluate 
+```math
+\lim_{x\to 1^+}\left(\frac{1}{\ln x}-\frac{1}{x-1}\right).
+```
+"""
+
+# ╔═╡ 42be8681-006f-443c-9728-0745d322e78c
+cm"""
+$(example("Example 1","Sketching the Graph of a Rational Function"))
+Analyze and sketch the graph of
+```math
+f(x) = \frac{2(x^2-9)}{x^2-4}.
+```
+"""
+
+# ╔═╡ e211485f-1a08-4f22-b8bd-38c5e88d22ce
+cm"""
+__Remark__
+
+The graph of a rational function (having no common factors and whose denominator is of degree  or greater) has a __slant asymptote__ when the __degree of the numerator__ *exceeds* the __degree of the denominator by exactly__ .
+
+$(example("Example 2","Sketching the Graph of a Rational Function"))
+Analyze and sketch the graph of
+```math
+f(x) = \frac{x^2-2x+4}{x-2}.
+```
+"""
+
+# ╔═╡ f3156ef2-1123-4c73-b920-1266bbf88a97
+cm"""
+$(example("Example 3","Sketching the Graph of a Logistic Function"))
+Analyze and sketch the graph of
+```math
+f(x) = \frac{1}{1+e^{-x}}.
+```
+"""
+
+# ╔═╡ ba2d2d1b-f4b7-4f53-a71d-340b42a88171
+cm"""
+$(example("Example 4","Sketching the Graph of a Radical Function"))
+Analyze and sketch the graph of
+```math
+f(x) = 2x^{5/3}-5x^{4/3}.
+```
+"""
+
+# ╔═╡ d3c9929d-a187-406e-a169-149f59c10619
+cm"""
+$(example("Example 5","Sketching the Graph of a Polynomial Function"))
+Analyze and sketch the graph of
+```math
+f(x) = x^4-12x^3+48x^2-64x.
+```
+"""
+
+# ╔═╡ 312d46e7-60b9-412e-b2a7-c7d355fa478a
+cm"""
+$(example("Example 6","Sketching the Graph of a Trigonometric Function"))
+Analyze and sketch the graph of
+```math
+f(x) = \frac{\cos x}{1+\sin x}.
+```
+"""
+
+# ╔═╡ 7ed6d362-cafa-4e0c-a44b-aeabf72bb0fd
+cm"""
+$(example("Example 7","Sketching the Graph of a Inverse Trigonometric Function"))
+Analyze and sketch the graph of
+```math
+f(x) = (\arctan x)^2.
+```
+"""
+
+# ╔═╡ 35fecbd5-176c-4c8a-a8cc-4cda1b5c5406
+cm"""
+$(example("Example 8","Sketching the Graph of a Logorithmic Function"))
+Analyze and sketch the graph of
+```math
+f(x) = \ln(x^2+2x+3).
+```
+"""
+
+# ╔═╡ b8fbdd6e-3081-4ba6-87aa-7018fc99bbf3
+cm"""
+$(beginBlock("Guidelines for Solving Applied Minimum and Maximum Problems",""))
+1. If possible, make a __sketch__ and identify all 
+	- __given__ quantities and 
+	- quantities to be __determined__. 
+2. Write a __primary equation__ for the quantity that is to be maximized or minimized. (A review of several useful formulas from geometry is presented on the Formulas from Geometry formula card.)
+3. Reduce the primary equation to one having a __single independent variable__. This may involve the use of __secondary equations__ relating the independent variables of the primary equation.
+4. Determine the feasible domain of the primary equation. That is, determine the values for which the stated problem makes sense.
+5. Determine the desired maximum or minimum value by the calculus techniques discussed in Sections 4.1, 4.2, 4.3, and 4.4.
+$(endBlock())
+"""
+
+# ╔═╡ 39cecbec-0680-4bb5-9164-1143d38489c4
+cm"""
+$(example("Example 1","Finding Maximum Volume"))
+A manufacturer wants to design an open box having a square base and a surface area of ``108`` square centimeters. What dimensions will produce a box with maximum volume?
+
+"""
+
+# ╔═╡ 994356a4-4487-4f49-83fa-f3fe23e13f07
+cm"""
+$(example("Example 2","Finding Minimum Distance"))
+Which points on the graph of ``y=4-x^2`` are closest to the point ``(0,2)``?
+"""
+
+# ╔═╡ 5c806936-39ff-4336-a519-669b2761a043
+cm"""
+$(example("Example 3","Finding Minimum Area"))
+A rectangular page is to contain ``216`` square centimeters of print. The margins at the top and bottom of the page are to be ``3`` centimeters, and the margins on the left and right are to be ``2`` centimeters. What should the dimensions of the page be so that the least amount of paper is used?
+"""
+
+# ╔═╡ 54c2b9fe-ee25-48f7-8e17-cecc6ffdb008
+cm"""
+$(example("Example 4","Finding Minimum Length"))
+Two posts, one ``12`` meters high and the other ``28`` meters high, stand ``30`` meters apart. They are to be stayed by two wires, attached to a single stake, running from ground level to the top of each post. Where should the stake be placed to use the least amount of wire?
+"""
+
+# ╔═╡ 79e64e89-d648-4b90-a921-0e1f95466d8f
+cm"""
+$(example("Example 5","An Endpoint Maximum"))
+Four meters of wire is to be used to form a square and a circle. How much of the wire should be used for the square and how much should be used for the circle to enclose the maximum total area?
+"""
+
+# ╔═╡ 731f5151-96de-45b2-aeda-657704e2d03a
+cm"""
+$(example("Example 6","Maximizing an Angle"))
+A photographer is taking a picture of a ``12``-meter painting hung in an art gallery. The camera lens is ``0.3`` meter below the lower edge of the painting, as shown below. 
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/l8f57bfcpw1b8xxofsirc/fig4.6.jpg?rlkey=3z18ily92ycuab8xssw18p0mi&raw=1"))
+</div>
+How far should the camera be from the painting to maximize the angle subtended by the camera lens?
+"""
+
+# ╔═╡ 582495da-2c8f-4303-9915-a09a322fef67
+cm"""
+$(example("Example 7","Finding a Maximum Revenue"))
+The demand function for a product is modeled by
+```math
+p = 56e^{-0.000012x}\qquad \color{red}{\text{Demand function}}
+```
+where ``p`` is the price per unit (in dollars) and ``x`` is the number of units. What price will yield a maximum revenue?
+"""
+
+# ╔═╡ 06aec364-efc2-4dab-8f2c-6f52a9117601
+cm"""
+Consider a function ``f`` that is differentiable at ``c``. The equation of the tangent line at the point ``(c,f(c))`` is
+```math
+y = f(c) + f'(c)(x-c).
+```
+and is called 
+- __the tangent line approximation__ (or __linear approximation__) of ``f`` at ``c``. 
+
+$(example("Example 1","Using a Tangent Line Approximation"))
+Find the tangent line approximation of ``f(x)=1+\sin x`` at the point ``(0,1)``. Then use a table to compare the ``x``-values of the linear function with those of  on an open interval containing ``x=0``.
+"""
+
+# ╔═╡ c9325c28-b09c-40e0-a7f0-5f1b8b177b7e
+cm"""
+$(beginBlock("Definition of Differentials",""))
+
+Let ``y=f(x)`` represent a function that is differentiable on an open interval containing ``x``. The __differential of  ``x``__(denoted by ``dx``) is any nonzero real number. The __differential of  ``y``__(denoted by ``dy``) is
+```math
+dy = f'(x)dx
+```
+$(endBlock())
+
+"""
+
+# ╔═╡ b2905623-4df1-4220-895c-ff5c4177825b
+cm"""
+$(beginBlock("remarks",""))
+In many types of applications, we use
+```math
+\Delta y \approx dy \quad \text{or}\quad \Delta y \approx f'(x) dx
+```
+$(endBlock())
+
+"""
+
+# ╔═╡ c55732b7-98f8-4db5-8ac9-33f3a5a8cced
+cm"""
+$(example("Example 2","Comparing Δy and dy"))
+Let ``y=x^2``. Find ``dy`` when ``x=1`` and ``dx=0.01``. 
+
+Compare this value with ``\Delta y`` for ``x=1`` and ``\Delta x =0.01``.
+"""
+
+# ╔═╡ 24cd357e-6f8e-4e57-b20f-86a8a7b94eb8
+cm"""
+$(example("Example 3","Estimation of Error"))
+The measured radius of a ball bearing is ``0.7`` centimeter, as shown in the figure. The measurement is correct to within ``0.01`` centimeter. 
+1. Estimate the propagated error in the volume  of the ball bearing.
+2. Find the relative error. 
+3. Find percent error
+<div class="img-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/1pl969xhtmbzetvtnitkz/fig_example_4.3.jpg?rlkey=02v17azi0sxa7oe4642denoax&raw=1"))
+</div>
+"""
+
+# ╔═╡ da377493-3c63-4e66-9d2a-0bca5c578fee
+cm"""
+$(beginBlock("",""))
+Differential Formulas
+Let ``u`` and ``v`` be differentiable functions of ``x``. Then
+```math
+du = u' dx, \quad dv = v' dx
+```
+- __Constant multiple__:	 ‍``d[cu]= c du``
+- __Sum or difference__:	``d[u\pm v]=du \pm dv``
+- __Product__:	``d[u v]=udv + vdu``
+- __Quotient__: ``d\left[\frac{u}{v}\right]=\frac{vdu - udv}{v^2}``	
+‍
+$(endBlock())
+"""
+
+# ╔═╡ 74e6c3b0-7781-47fc-a417-de936c439020
+cm"""
+$(example("Example 7","Approximating Function Values"))
+Use differentials to approximate ``\sqrt{16.5}``.
+"""
+
+# ╔═╡ 12afb5d7-2d45-4473-86d8-0c7e2b8355d4
+cm"""
+$(beginBlock("Definition of Antiderivative",""))
+A function ``F`` is an __antiderivative__ of ``f`` on an interval ``I`` when 
+```math
+F'(x) = f(x) \quad \text{for all }\quad x\quad \text{in}\quad I.
+```
+$(endBlock())
+"""
+
+# ╔═╡ 9297d1de-d785-4bd0-be5a-217b6d2c6694
+cm"""
+$(beginTheorem("Representation of Antiderivatives"))
+If ``F`` is an antiderivative of ``f`` on an interval ``I``, then ``G`` is an antiderivative of ``f`` on the interval ``I`` if and only if ``G`` is of the form
+```math
+G(x)=F(x) + C\quad \text{for all }x\text{ in } I,
+```  
+where ``C`` is a constant.
+$(endTheorem())
+"""
+
+# ╔═╡ 91925521-c2eb-4a23-9355-397a8ff4363e
+cm"""
+$(beginBlock("Remarks",""))
+- The constant ``C`` is called the __constant of integration__.
+- The __family of functions__ represented by ``G`` is the __general antiderivative__ of ``f`` and
+- ``G(x)=F(x)+C`` is __the general solution__ of the differential equation
+```math
+G'(x)=f(x)
+```
+- A __differential equation__ in ``x`` and ``y`` is an equation that involves ``x``, ``y``, and derivatives of ``y``.
+$(endBlock())
+"""
+
+# ╔═╡ fd9b8d50-408e-416c-ac82-09397f2c45ee
+cm"""
+$(example("Example 1","Solving a Differential Equation"))
+Find the general solution of the differential equation 
+```math
+\frac{dy}{dx}=2.
+```
+"""
+
+# ╔═╡ 0dac1f0b-743a-46e6-a9a1-6a74d08c7d62
+cm"""
+$(beginBlock("Remarks",""))
+When solving ``\displaystyle \frac{dy}{dx}=f(x)``, we conveniently write
+```math
+dy = f(x) dx \tag{*}
+```
+- __antidifferentiation (or indefinite integration)__: is the operation of finding all solutions of Equation (``*``) and is denoted by an integral sign ``\displaystyle \int``.
+- The general solution is denoted by
+```math
+y = \int f(x) dx = F(x) + C
+```
+- Here
+	- ``f(x)`` is called __Integrand__
+	- ``dx`` means ``x`` the __Variable of Integration__
+	- ``F(x)`` is __An antiderivative of ``f(x)``__
+	- ``C`` is __Constant of Integration__
+- In this course, the notation ``\displaystyle \int f(x) dx = F(x) +C`` means that ``F`` is an antiderivative of ``f`` on an interval ``I``.
+$(endBlock())
+"""
+
+# ╔═╡ be4b4706-b563-4af6-a11c-0696be4e0691
+cm"""
+$(example("Example 9","Solving a Vertical Motion Problem"))
+A ball is thrown upward with an initial velocity of ``19.6`` meters per second from an initial height of ``24.5`` meters. [Assume the acceleration is ``a(t)=-9.8`` meters per second pere second.]
+
+1. Find the position function giving the height ``s`` as a function of the time ``t``.
+2. When does the ball hit the ground?
+"""
+
+# ╔═╡ 2b2333cd-20f4-4270-b0f5-7a4338746733
+cm"""
+$(beginBlock("Definitions of the Hyperbolic Functions",""))
+```math
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\sech}{sech}
+\begin{array}{lclcclll}
+\sinh x &=&\displaystyle \frac{e^x-e^{-x}}{2} &\quad \text{}&  \csch x &=& \displaystyle\frac{1}{\sinh x}, \quad x\neq 0\\
+
+\cosh x &=&\displaystyle \frac{e^x+e^{-x}}{2} &\quad \text{}&  \sech x &=& \displaystyle\frac{1}{\cosh x},\\
+
+\tanh x &=&\displaystyle \frac{\sinh x}{\cosh x} &\quad \text{}&  \coth x &=& \displaystyle\frac{\cosh x}{\sinh x}, \quad x\neq 0\\
+
+\end{array}
+```
+$(endBlock())
+
+‍
+
+"""
+
+# ╔═╡ 4c85e9a2-fba9-4717-9842-f082cbf08532
+cm"""
+$(beginBlock("Hyperbolic Identities",""))
+<div class="ing-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/apz0w40bk0nahpo9ddzgn/fig5.9.1.png?rlkey=8d9kbjpwyvnrp89t2g960agas&raw=1"))
+</div>
+
+$(endBlock())
+"""
+
+# ╔═╡ c23f8b78-6bef-41bf-b42d-c6a2c264d388
+cm"""
+$(beginTheorem("Derivatives and Integrals of Hyperbolic Functions"))
+Let ``u`` be a differentiable function of ``x``.
+<div class="ing-container">
+
+$(Resource("https://www.dropbox.com/scl/fi/m6614mruxfcb9p0aknrvn/fig5.9.2.png?rlkey=q09y0opfhp3yh3mlbzpzojuks&raw=1"))
+</div>
+
+$(endTheorem())
+"""
+
+# ╔═╡ ada1253f-bd11-4ae2-b873-cd87c9cb9b77
+cm"""
+$(example("Example 2","Finding Relative Extrema"))
+Find the relative extrema of
+```math
+f(x) = (x-1)\cosh x \;\; -\;\; \sinh x.
+```
 """
 
 # ╔═╡ 5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
@@ -4509,6 +5316,86 @@ version = "1.4.1+0"
 # ╟─b5107032-e1a0-42ed-9618-21e8228b2074
 # ╟─e5c83d3d-d793-46c3-8f58-8ed5cdd2a909
 # ╟─0bddc2a4-e177-48fc-b719-590fb9bfa51d
+# ╟─2a7acbef-d1ce-401a-896c-8ce09d2e6114
+# ╟─a7d9c7a2-1258-4931-a9bd-0f3a9ac44860
+# ╟─ee435810-e783-4e97-bf6f-fe7a28b19a33
+# ╟─d0d1295e-576a-4e01-8272-e82abc18fa86
+# ╟─20ab5b13-7386-4908-bb5b-31f364ff0463
+# ╟─691021f4-9992-49bf-8096-002b57baea94
+# ╟─2e8da35a-daab-4adf-94a7-75ed20e07fa4
+# ╟─0af9fbea-48c0-4dc3-88b5-186e413f9576
+# ╟─0bbd39a3-39a1-43e6-acaf-e23bea88f99f
+# ╟─e17f40cf-5bb2-49e5-a3b6-4d255198e8e6
+# ╟─2ccf9965-4575-4ea1-9adf-39bdbd97ba8f
+# ╟─856bf6d7-901b-4111-a89b-6f54785c06e2
+# ╟─88d86a2d-0f99-4419-8fa2-f4783230c970
+# ╟─7466af13-f7dd-4885-894d-0bc01e1da054
+# ╟─c6046798-864c-4d4a-9a19-0fa2915bc156
+# ╟─30aa50f7-5e1e-402a-92a8-3198762ba87a
+# ╟─80dd84ef-40a7-4704-b264-fdcbfa69eab1
+# ╟─c41ac604-774c-41d8-b1a5-afa64c47f541
+# ╟─da62a3db-5f99-47e7-8f19-4ae7eb47bcb5
+# ╟─eeab5d1b-bb07-47b0-b389-6d18efb6dfc9
+# ╟─4b58a4bd-1b24-4271-b717-43efd32a56f6
+# ╟─efa779aa-373c-4afb-8908-bdd8a2db2498
+# ╟─42be8681-006f-443c-9728-0745d322e78c
+# ╟─a9d29288-d4ef-4c13-91e1-fe9ba19dacb3
+# ╠═7d531681-d435-46c3-9206-1a75324dc3b5
+# ╟─e211485f-1a08-4f22-b8bd-38c5e88d22ce
+# ╟─f3156ef2-1123-4c73-b920-1266bbf88a97
+# ╟─ba2d2d1b-f4b7-4f53-a71d-340b42a88171
+# ╟─d3c9929d-a187-406e-a169-149f59c10619
+# ╟─312d46e7-60b9-412e-b2a7-c7d355fa478a
+# ╟─7ed6d362-cafa-4e0c-a44b-aeabf72bb0fd
+# ╟─35fecbd5-176c-4c8a-a8cc-4cda1b5c5406
+# ╟─f431e7b3-612a-452f-8a82-93096efc8d17
+# ╟─b8fbdd6e-3081-4ba6-87aa-7018fc99bbf3
+# ╟─39cecbec-0680-4bb5-9164-1143d38489c4
+# ╠═a9795eba-f3fa-4c21-be7b-b7d7d48f9a9a
+# ╟─994356a4-4487-4f49-83fa-f3fe23e13f07
+# ╟─5c806936-39ff-4336-a519-669b2761a043
+# ╟─54c2b9fe-ee25-48f7-8e17-cecc6ffdb008
+# ╟─79e64e89-d648-4b90-a921-0e1f95466d8f
+# ╠═73ed74d8-e0af-4423-98af-64917c698a2a
+# ╟─731f5151-96de-45b2-aeda-657704e2d03a
+# ╟─582495da-2c8f-4303-9915-a09a322fef67
+# ╟─f27873eb-bf75-4ccb-b028-4df8b881098a
+# ╟─06aec364-efc2-4dab-8f2c-6f52a9117601
+# ╠═e4ac1646-bfa8-49ad-9853-fee698f342cc
+# ╠═8afb2087-db74-4993-88eb-aa3216aa3249
+# ╟─6e201766-71ff-469f-8914-c558a522e924
+# ╟─1e839421-ece5-4d6b-8e03-97b4ee1998a7
+# ╟─c9325c28-b09c-40e0-a7f0-5f1b8b177b7e
+# ╟─b2905623-4df1-4220-895c-ff5c4177825b
+# ╟─c55732b7-98f8-4db5-8ac9-33f3a5a8cced
+# ╠═d217087c-3959-4423-bd9a-9718ba5a3a39
+# ╟─7f742b67-5a03-4a34-b81c-12d527225558
+# ╟─3570ab4f-e1d1-4659-a0a9-dc19a5b097b2
+# ╟─24cd357e-6f8e-4e57-b20f-86a8a7b94eb8
+# ╟─bf40ce5f-c2c7-4e5f-9597-09d3c93b8f3b
+# ╟─699ba113-feb8-421f-b4a2-dd1338a41f8f
+# ╟─da377493-3c63-4e66-9d2a-0bca5c578fee
+# ╟─74e6c3b0-7781-47fc-a417-de936c439020
+# ╟─5a99f82f-8bb4-458c-b487-cb8cf244e858
+# ╟─199f412a-33f9-4cbb-87c4-52d64b6fb566
+# ╟─12afb5d7-2d45-4473-86d8-0c7e2b8355d4
+# ╟─9297d1de-d785-4bd0-be5a-217b6d2c6694
+# ╟─91925521-c2eb-4a23-9355-397a8ff4363e
+# ╟─fd9b8d50-408e-416c-ac82-09397f2c45ee
+# ╟─0dac1f0b-743a-46e6-a9a1-6a74d08c7d62
+# ╟─c579de3e-fa2c-4564-93d6-cbad24fb8b65
+# ╟─5887527b-2796-48b9-9efd-b7bb148db30d
+# ╟─9ff92540-43a8-4959-8868-ff1a99697819
+# ╟─601f5751-ffa4-4a96-989f-ef7ab90b7aa3
+# ╟─6b547114-da51-4cd0-940a-4f930621ac7b
+# ╟─9603c5f6-d217-4971-8776-a36f96787769
+# ╟─be4b4706-b563-4af6-a11c-0696be4e0691
+# ╟─498b99af-28b9-4c7a-bf7a-4111784e7516
+# ╟─2b2333cd-20f4-4270-b0f5-7a4338746733
+# ╟─4c85e9a2-fba9-4717-9842-f082cbf08532
+# ╟─5ddf96e0-8c11-43cd-af50-9bd303666a4f
+# ╟─c23f8b78-6bef-41bf-b42d-c6a2c264d388
+# ╟─ada1253f-bd11-4ae2-b873-cd87c9cb9b77
 # ╟─90a75f2b-f1a3-4cd4-82ff-fbbd28d85e46
 # ╟─5e4eb8a8-b5b4-4fd6-b98c-319b46293ef9
 # ╟─d4d13cb6-2162-4ac3-ac2f-8837c1084e53

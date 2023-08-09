@@ -25,3 +25,4 @@
 - [Section 3.5](https://itempool.com/mshahrani/c/NO1cKVczozj)
 - [Section 3.6](https://itempool.com/mshahrani/c/89mwNsDKeyM)
 - [Major 2 Revision](https://itempool.com/mshahrani/c/uS0qC_Fauak)
+- [Section 4.4](https://itempool.com/mshahrani/c/u3-d1fDkXsx)
