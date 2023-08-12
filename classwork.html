@@ -28,7 +28,7 @@
                     <h5><span x-text="`${fullname} (${kfupm_id})`"></span></h5>
                 
             </template>
-            <h4 x-show="scores.length==0">No Data: Make sure to click the link sent to you through email. </h4>
+            <h4 x-show="scores.length==0 && !isLoading">No Data: Make sure to click the link sent to you through email. </h4>
             <template x-if="scores.length>0" >
                 <table role="grid">
                    
