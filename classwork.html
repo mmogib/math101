@@ -11,9 +11,10 @@
 <body>
     <main class="container">
         <h1>Classwork</h1>
-    
         <article x-data="showGrades()" >
-            <form @submit.prevent>
+            <article aria-busy="true" x-show="isLoading"></article>
+           
+            <!-- <form @submit.prevent>
 
                 <label for="firstname">
                     Enter ID
@@ -21,28 +22,21 @@
                         required>
                 </label>
                 <button type="submit" @click="getScores(kfupm_id)" :disabled="isLoading">Get Scores</button>
-            </form>
+            </form> -->
             <template x-if="fullname!==null">
-                <article >
-                    <h5>Name: <span x-text="fullname"></span></h5>
-                </article>
+                
+                    <h5><span x-text="`${fullname} (${kfupm_id})`"></span></h5>
+                
             </template>
-            <template x-if="scores.length>0">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Label</th>
-                            <th scope="col">Value</th>
-                            <th scope="col">Notes</th>
-                        </tr>
-                    </thead>
+            <h4 x-show="scores.length==0">No Data: Make sure to click the link sent to you through email. </h4>
+            <template x-if="scores.length>0" >
+                <table role="grid">
+                   
                     <tbody>
                         <template x-for="score in scores" :key="score.name">
                             <tr>
                                 <th scope="row" x-text="score.name"></th>
                                 <td x-text="score.value"></td>
-                                <td></td>
-
                             </tr>
                         </template>
                     </tbody>
