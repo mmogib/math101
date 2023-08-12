@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>MATH101 - Classwork</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Classwork</h1>
+        <h3>Mohammed Alshahrani</h2>
+            <h4>CLASSWORK (Normalized):
+        </h3>
+    
+        <article x-data="showGrades()" >
+            <form @submit.prevent>
+
+                <label for="firstname">
+                    Enter ID
+                    <input x-model="kfupm_id" type="number" id="kfupm_id" name="kfupm_id" placeholder="your KFUPM ID"
+                        required>
+                </label>
+                <button type="submit" @click="getScores(kfupm_id)" :disabled="isLoading">Get Scores</button>
+            </form>
+            <template x-if="fullname!==null">
+                <article >
+                    <h5>Name: <span x-text="fullname"></span></h5>
+                </article>
+            </template>
+            <template x-if="scores.length>0">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Label</th>
+                            <th scope="col">Value</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="score in scores" :key="score.name">
+                            <tr>
+                                <th scope="row" x-text="score.name"></th>
+                                <td x-text="score.value"></td>
+                                <td></td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+
+                </table>
+            </template>
+        </article>
+    </main>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="data.js"></script>
+</body>
+
+</html>
