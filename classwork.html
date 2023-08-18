@@ -2,21 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MATH101 - Classwork</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+
 </head>
 
 <body>
     <main class="container">
-        <h1 style="color: magenta;">Classwork</h1>
+        <h1 style="color: magenta">Classwork</h1>
         <article x-data="showGrades()">
             <article aria-busy="true" x-show="isLoading"></article>
-           
+
             <!-- <form @submit.prevent>
 
                 <label for="firstname">
+
+
+
+
                     Enter ID
                     <input x-model="kfupm_id" type="number" id="kfupm_id" name="kfupm_id" placeholder="your KFUPM ID"
                         required>
@@ -24,25 +29,23 @@
                 <button type="submit" @click="getScores(kfupm_id)" :disabled="isLoading">Get Scores</button>
             </form> -->
             <template x-if="fullname!==null">
-                
-                    <h5><span x-text="`${fullname} (${kfupm_id})`"></span></h5>
-                
-            </template>
-            <h4 x-show="scores.length==0 && !isLoading">No Data: Make sure to click the link sent to you through email. </h4>
-            <template x-if="scores.length>0" >
-                <table role="grid">
-                   
-                    <tbody>
-                        <template x-for="score in scores" :key="score.name">
-                            <tr>
-                                <th scope="row" x-text="score.name"></th>
-                                <td x-text="score.value"></td>
-                            </tr>
-                        </template>
-                    </tbody>
-
-                </table>
-            </template>
+                <h5><span x-text="`${fullname} (${kfupm_id})`"></span></h5>
+                < </template>
+                    <h4 x-show="scores.length==0 && !isLoading">
+                        No Data: Make sure to click the link sent to you through email.
+                    </h4>
+                    <template x-if="scores.length>0">
+                        <table role="grid">
+                            <tbody>
+                                <template x-for="score in scores" :key="score.name">
+                                    <tr>
+                                        <th scope="row" x-text="score.name"></th>
+                                        <td x-text="score.value"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </template>
         </article>
     </main>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
